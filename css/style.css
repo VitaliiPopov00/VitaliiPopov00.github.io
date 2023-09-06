@@ -1,0 +1,149 @@
+/* ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ */
+
+.no-show {
+    display: none;
+}
+
+/* BODY START */
+
+body {
+    background-color: black;
+}
+
+/* BODY END */
+
+
+
+/* HEADER START */
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+}
+
+.nav>a {
+    padding: 10px 13px;
+    margin-left: 30px;
+    transition: .2s;
+}
+
+.nav>a:first-child {
+    margin-left: 0px;
+}
+
+.nav>a:hover {
+    background-color: white;
+    color: black;
+}
+
+.menu_btn {
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.menu_btn span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.menu_btn span:nth-child(2) {
+    top: calc(50% - 10px);
+}
+
+.menu_btn span:nth-child(3) {
+    top: calc(50% + 10px);
+}
+
+.nav_small_screen {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 95vh;
+}
+
+.header_small_screen {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.small_screen_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small_screen_middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.small_screen_middle>a {
+    padding: 10px 13px;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+.small_screen_middle>a:last-child {
+    margin-bottom: 0px;
+}
+
+.small_screen_middle>a:hover {
+    background-color: white;
+    color: black;
+}
+
+.small_screen_footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.small_screen_footer>a {
+    padding: 10px 13px;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+.small_screen_footer>a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* HEADER END */
+
+
+
+/* MAIN START */
+
+
+
+/* MAIN END */
+
+
+
+/* FOOTER START */
+
+
+
+/* FOOTER END */

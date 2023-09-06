@@ -1,0 +1,20 @@
+/* ТЕЛЕФОНЫ */
+@media (min-width: 320px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* ПЛАНШЕТЫ */
+@media (min-width: 768px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* ДЕСКТОП */
+@media (min-width: 1280px) {
+    .container {
+        width: 1200px;
+    }
+}
