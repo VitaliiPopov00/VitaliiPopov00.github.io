@@ -3,6 +3,24 @@
     .container {
         width: 90%;
     }
+
+    .svg_main_logo {
+        width: 225px;
+    }
+
+    .main_title {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 450px) {
+    .svg_main_logo {
+        width: 275px;
+    }
+
+    .main_title {
+        font-size: 17px;
+    }
 }
 
 /* ПЛАНШЕТЫ */
@@ -10,11 +28,27 @@
     .container {
         width: 85%;
     }
+
+    .svg_main_logo {
+        width: 375px;
+    }
+
+    .main_title {
+        font-size: 19px;
+    }
 }
 
 /* ДЕСКТОП */
 @media (min-width: 1280px) {
     .container {
         width: 1200px;
+    }
+
+    .svg_main_logo {
+        width: 400px;
+    }
+
+    .main_title {
+        font-size: 21px;
     }
 }

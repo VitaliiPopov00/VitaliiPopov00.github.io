@@ -8,6 +8,9 @@
 
 body {
     background-color: black;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 /* BODY END */
@@ -27,7 +30,6 @@ header {
     justify-content: space-between;
     align-items: center;
     font-weight: 700;
-    position: relative;
 }
 
 .nav>a {
@@ -62,6 +64,16 @@ header {
     background-color: white;
 }
 
+.menu_btn.second span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+}
+
 .menu_btn span:nth-child(2) {
     top: calc(50% - 10px);
 }
@@ -71,18 +83,21 @@ header {
 }
 
 .nav_small_screen {
-    background-color: black;
+    background-color: white;
     position: absolute;
     top: 0;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 15px 0px;
 }
 
 .header_small_screen {
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: space-between;
+    margin: 0 auto;
+    height: 100%;
 }
 
 .small_screen_top {
@@ -103,6 +118,7 @@ header {
     padding: 10px 13px;
     margin-bottom: 20px;
     transition: .2s;
+    color: black;
 }
 
 .small_screen_middle>a:last-child {
@@ -110,8 +126,8 @@ header {
 }
 
 .small_screen_middle>a:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 .small_screen_footer {
@@ -123,11 +139,12 @@ header {
     padding: 10px 13px;
     margin-bottom: 20px;
     transition: .2s;
+    color: black;
 }
 
 .small_screen_footer>a:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 /* HEADER END */
@@ -136,7 +153,34 @@ header {
 
 /* MAIN START */
 
+main.main {
+    position: relative;
+}
 
+.main_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.main_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.svg_main_logo {
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.main_title {
+    text-align: center;
+    font-weight: 700;
+    line-height: 30px;
+}
 
 /* MAIN END */
 
