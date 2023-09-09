@@ -11,6 +11,14 @@
     .main_title {
         font-size: 15px;
     }
+
+    .last_sales_title {
+        font-size: 21px;
+    }
+
+    .card {
+        margin-inline: auto;
+    }
 }
 
 @media (min-width: 450px) {
@@ -20,6 +28,16 @@
 
     .main_title {
         font-size: 17px;
+    }
+
+    .last_sales_title {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 599px) {
+    .card {
+        margin-inline: 0px;
     }
 }
 
@@ -36,6 +54,10 @@
     .main_title {
         font-size: 19px;
     }
+
+    .last_sales_title {
+        font-size: 29px;
+    }
 }
 
 /* ДЕСКТОП */
@@ -50,5 +72,9 @@
 
     .main_title {
         font-size: 21px;
+    }
+
+    .last_sales_title {
+        font-size: 32px;
     }
 }

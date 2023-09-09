@@ -10,7 +10,6 @@ body {
     background-color: black;
     position: relative;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 /* BODY END */
@@ -83,13 +82,14 @@ header {
 }
 
 .nav_small_screen {
+    box-sizing: border-box;
     background-color: white;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100vh;
-    box-sizing: border-box;
     padding: 15px 0px;
+    font-weight: 700;
 }
 
 .header_small_screen {
@@ -162,6 +162,7 @@ main.main {
     height: 100%;
     object-fit: cover;
     opacity: 0.4;
+    margin-bottom: 50px;
 }
 
 .main_logo {
@@ -180,6 +181,95 @@ main.main {
     text-align: center;
     font-weight: 700;
     line-height: 30px;
+}
+
+.last_sales {
+    margin-inline: auto;
+    margin-bottom: 100px;
+}
+
+.last_sales_title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.card_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 255px;
+    height: 450px;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card_info {
+    flex: 1;
+    margin: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.album_name {
+    color: black;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.album_artist {
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    color: #828282;
+}
+
+.price {
+    color: black;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.card_button {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 15px 30px;
+    transition: .2s;
+}
+
+.card_button:hover {
+    background-color: white;
+    color: black;
+}
+
+.card_operation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_minus {
+    border-radius: 50%;
+    background-color: white;
+    padding: 0px 10px;
+    border: 3px solid black;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;    
 }
 
 /* MAIN END */
