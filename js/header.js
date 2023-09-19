@@ -20,11 +20,11 @@ $(document).ready(function () {
 
     $('.menu_btn.main').on('click', () => {
         $('.menu_btn.main').addClass('no-show');
-        $('.nav_small_screen').toggleClass('no-show');
+        $('.nav_small_screen').slideToggle(300);
     });
 
     $('.menu_btn.second').on('click', () => {
         $('.menu_btn.main').removeClass('no-show');
-        $('.nav_small_screen').toggleClass('no-show');
+        $('.nav_small_screen').slideToggle(300);
     });
 });
