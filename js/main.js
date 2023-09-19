@@ -4,5 +4,9 @@ $(document).ready(function () {
         'height': `${$(window).height() - height}px`
     });
 
+    $('nav_small_screen').css({
+        'height': `${$(window).height()}px`
+    });
+
     $('.card_img').css('height', $('.card').width());
 });
