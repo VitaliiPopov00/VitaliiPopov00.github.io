@@ -4,6 +4,10 @@
     display: none;
 }
 
+.container {
+    margin-inline: auto;
+}
+
 /* BODY START */
 
 body {
@@ -19,6 +23,7 @@ body {
 /* HEADER START */
 
 header {
+    font-family: 'Murs Gothic';
     display: flex;
     justify-content: center;
     padding: 15px 0px;
@@ -32,7 +37,7 @@ header {
 }
 
 .nav>a {
-    padding: 10px 13px;
+    padding: 13px 13px 10px;
     margin-left: 30px;
     transition: .2s;
 }
@@ -82,6 +87,7 @@ header {
 }
 
 .nav_small_screen {
+    font-family: 'Murs Gothic';
     box-sizing: border-box;
     background-color: white;
     position: absolute;
@@ -114,7 +120,7 @@ header {
 }
 
 .small_screen_middle>a {
-    padding: 10px 13px;
+    padding: 13px 13px 10px;
     margin-bottom: 20px;
     transition: .2s;
     color: black;
@@ -152,8 +158,12 @@ header {
 
 /* MAIN START */
 
-main.main {
+.main_screen {
+    margin-inline: auto;
+    font-family: 'Murs Gothic';
     position: relative;
+    margin-bottom: 50px;
+    max-width: 1920px;
 }
 
 .main_img {
@@ -161,7 +171,6 @@ main.main {
     height: 100%;
     object-fit: cover;
     opacity: 0.4;
-    margin-bottom: 50px;
 }
 
 .main_logo {
@@ -182,12 +191,13 @@ main.main {
     line-height: 30px;
 }
 
-.last_sales {
+.products {
     margin-inline: auto;
     margin-bottom: 50px;
 }
 
-.last_sales_title {
+.products_title {
+    font-family: 'Murs Gothic';
     text-align: center;
     font-weight: 700;
     margin-bottom: 50px;
@@ -216,6 +226,7 @@ main.main {
 }
 
 .card_info {
+    font-family: 'Inter Bold', sans-serif;
     flex: 1;
     margin: 10px 15px;
     display: flex;
@@ -258,17 +269,27 @@ main.main {
 
 .card_operation {
     display: flex;
-    justify-content: space-between;
+    height: 45px;
 }
 
-.card_minus {
-    border-radius: 50%;
+.basket {
     background-color: white;
-    padding: 0px 10px;
-    border: 3px solid black;
     color: black;
+}
+
+.quantity_operation {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.quantity_operation > button {
+    color: black;
+    background-color: white;
     font-size: 20px;
-    font-weight: 700;    
+    flex-grow: 1;
+    transition: .2s;
+    text-align: center;
 }
 
 /* MAIN END */
@@ -277,6 +298,52 @@ main.main {
 
 /* FOOTER START */
 
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 185px;
+    margin: 100px 0px 50px;
+}
+
+.contact {
+    font-family: 'Murs Gothic';
+}
+
+.contact > div {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.contact > div > svg {
+    margin-right: 20px;
+}
+
+.email_contact {
+    margin-bottom: 20px;
+}
+
+.information_company {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information_company > p {
+    color: #787878;
+    font-family: 'Inter Bold', sans-serif;
+    font-weight: 700;
+}
+
+.button_up {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    font-family: 'Murs Gothic';
+    padding: 15px 30px 12px;
+}
 
 
 /* FOOTER END */
