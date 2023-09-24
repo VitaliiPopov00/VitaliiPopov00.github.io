@@ -10,7 +10,8 @@ $(document).ready(function () {
     $('.card_img').css('height', $('.card').width());
     $('.nav_small_screen').css('height', `${$(window).height()}px`);
 
-    $('.card_button').on('click', function () {
+    $('.card_button').on('click', function (e) {
+        e.preventDefault();
         $(this).toggleClass('basket');
         $(this).parent().find('.operation').toggleClass('no-show quantity_operation');
 
@@ -39,7 +40,9 @@ $(document).ready(function () {
         }
     });
 
-    $('.button_up').on('click', function () {
+    $('.button_up').on('click', function (e) {
+        e.preventDefault();
+
         $('body,html').animate({
             scrollTop: 0
         }, 400);

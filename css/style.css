@@ -23,7 +23,6 @@ body {
 /* HEADER START */
 
 header {
-    font-family: 'Murs Gothic';
     display: flex;
     justify-content: center;
     padding: 15px 0px;
@@ -33,12 +32,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 700;
 }
 
 .nav>a {
-    padding: 13px 13px 10px;
-    margin-left: 30px;
+    padding: 10px 20px;
+    margin-left: 20px;
     transition: .2s;
 }
 
@@ -87,7 +85,6 @@ header {
 }
 
 .nav_small_screen {
-    font-family: 'Murs Gothic';
     box-sizing: border-box;
     background-color: white;
     position: absolute;
@@ -120,7 +117,7 @@ header {
 }
 
 .small_screen_middle>a {
-    padding: 13px 13px 10px;
+    padding: 10px 20px;
     margin-bottom: 20px;
     transition: .2s;
     color: black;
@@ -141,7 +138,7 @@ header {
 }
 
 .small_screen_footer>a {
-    padding: 10px 13px;
+    padding: 10px 20px;
     margin-bottom: 20px;
     transition: .2s;
     color: black;
@@ -160,7 +157,6 @@ header {
 
 .main_screen {
     margin-inline: auto;
-    font-family: 'Murs Gothic';
     position: relative;
     margin-bottom: 50px;
     max-width: 1920px;
@@ -187,8 +183,8 @@ header {
 
 .main_title {
     text-align: center;
-    font-weight: 700;
     line-height: 30px;
+    font-family: 'Prosto one';
 }
 
 .products {
@@ -197,9 +193,8 @@ header {
 }
 
 .products_title {
-    font-family: 'Murs Gothic';
+    font-family: 'Prosto one';
     text-align: center;
-    font-weight: 700;
     margin-bottom: 50px;
 }
 
@@ -226,7 +221,6 @@ header {
 }
 
 .card_info {
-    font-family: 'Inter Bold', sans-serif;
     flex: 1;
     margin: 10px 15px;
     display: flex;
@@ -234,31 +228,30 @@ header {
     justify-content: space-between;
 }
 
-.album_name {
+.album_name{
+    font-weight: 400;
     color: black;
-    font-weight: 700;
     font-size: 23px;
+    line-height: 18px;
 }
 
-.album_artist {
-    color: black;
-    font-weight: 700;
+.album_name > span{
     font-size: 14px;
     color: #828282;
+    font-weight: 400;
 }
 
 .price {
+    font-weight: 400;
     color: black;
-    font-weight: 700;
     font-size: 23px;
 }
 
 .card_button {
     background-color: black;
     color: white;
-    font-weight: 700;
-    font-size: 12px;
-    padding: 15px 30px;
+    font-size: 13px;
+    padding: 13px 30px;
     transition: .2s;
 }
 
@@ -284,6 +277,7 @@ header {
 }
 
 .quantity_operation > button {
+    font-weight: 400;
     color: black;
     background-color: white;
     font-size: 20px;
@@ -306,18 +300,14 @@ header {
     margin: 100px 0px 50px;
 }
 
-.contact {
-    font-family: 'Murs Gothic';
-}
-
 .contact > div {
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-weight: 500;
 }
 
 .contact > div > svg {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .email_contact {
@@ -333,16 +323,20 @@ header {
 
 .information_company > p {
     color: #787878;
-    font-family: 'Inter Bold', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .button_up {
+    position: relative;
     background-color: white;
     color: black;
     font-weight: 700;
-    font-family: 'Murs Gothic';
-    padding: 15px 30px 12px;
+    padding: 13px 30px;
+}
+
+.button_up > svg{
+    position: relative;
+    top: 3px;
 }
 
 
