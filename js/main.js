@@ -1,14 +1,26 @@
 $(document).ready(function () {
     let heightHeader = $('.header').outerHeight(true);
-    $('.main_screen').css({
-        'height': `${$(window).height() - heightHeader}px`
-    });
-
-    console.log($(window).height());
-    console.log(heightHeader);
+    $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
 
     $('.card_img').css('height', $('.card').width());
     $('.nav_small_screen').css('height', `${$(window).height()}px`);
+    $('.playlist').css('height', `${$('.product_img').height()}px`);
+    $('.playlist').css('width', `${$('.product_img').width()}px`);
+
+    // $('.product_img').on('click', function() {
+    //     $(this).toggleClass('no-show');
+    //     $('.playlist').toggleClass('no-show');
+    // });
+
+    // $('.playlist').on('click', function() {
+    //     $(this).toggleClass('no-show');
+    //     $('.product_img').toggleClass('no-show');
+    // });
+
+    $(window).on('resize', function() {
+        $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
+        $('.nav_small_screen').css('height', `${$(window).height()}px`);
+    });
 
     $('.card_button').on('click', function (e) {
         e.preventDefault();

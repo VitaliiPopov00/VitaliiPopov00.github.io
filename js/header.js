@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    if ($(window).width() < 850) {
+    if ($(window).width() < 890) {
         $('.nav_big_screen').addClass('no-show');
         $('.menu_btn.main').removeClass('no-show');
     } else {
@@ -8,7 +8,7 @@ $(document).ready(function () {
     }
 
     $(window).on('resize', function () {
-        if ($(window).width() < 850) {
+        if ($(window).width() < 890) {
             $('.nav_big_screen').addClass('no-show');
             $('.menu_btn.main').removeClass('no-show');
         } else {
