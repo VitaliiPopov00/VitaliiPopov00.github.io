@@ -61,11 +61,13 @@ $(document).ready(function () {
             $(this).html('В КОРЗИНЕ');
 
             $(this).parent().find('.operation').find('.plus').on('click', function () {
+                e.preventDefault();
                 let count = Number($(this).parent().find('.number').html());
                 $(this).parent().find('.number').html(count + 1);
             });
 
             $(this).parent().find('.operation').find('.minus').on('click', function () {
+                e.preventDefault();
                 let count = Number($(this).parent().find('.number').html());
 
                 if (count == 1) {
