@@ -4,18 +4,16 @@ $(document).ready(function () {
 
     $('.card_img').css('height', $('.card').width());
     $('.nav_small_screen').css('height', `${$(window).height()}px`);
-    $('.playlist').css('height', `${$('.product_img').height()}px`);
-    $('.playlist').css('width', `${$('.product_img').width()}px`);
 
-    // $('.product_img').on('click', function() {
-    //     $(this).toggleClass('no-show');
-    //     $('.playlist').toggleClass('no-show');
-    // });
+    $('.product_img').on('click', function() {
+        $(this).toggleClass('no-show');
+        $('.playlist').toggleClass('no-show');
+    });
 
-    // $('.playlist').on('click', function() {
-    //     $(this).toggleClass('no-show');
-    //     $('.product_img').toggleClass('no-show');
-    // });
+    $('.playlist').on('click', function() {
+        $(this).toggleClass('no-show');
+        $('.product_img').toggleClass('no-show');
+    });
 
     $(window).on('resize', function () {
         $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);

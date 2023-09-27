@@ -242,18 +242,21 @@ main.main {
     color: black;
     font-size: 23px;
     line-height: 18px;
+    font-family: 'Inter SemiBold';
 }
 
 .album_name>span {
     font-size: 14px;
     color: #828282;
     font-weight: 400;
+    font-family: 'Inter SemiBold';
 }
 
 .price {
     font-weight: 400;
     color: black;
     font-size: 23px;
+    font-family: 'Inter SemiBold';
 }
 
 .card_button {
@@ -262,6 +265,7 @@ main.main {
     font-size: 13px;
     padding: 13px 30px;
     transition: .2s;
+    font-family: 'Inter Regular';
 }
 
 .card_button:hover {
@@ -321,6 +325,10 @@ main.main {
     height: 350px;
 }
 
+.product_img:hover {
+    cursor: pointer;
+}
+
 .product_info {
     display: flex;
     flex-direction: column;
@@ -331,12 +339,14 @@ main.main {
 .product_info>p {
     color: #929292;
     font-size: 13px;
+    font-family: 'Inter Regular';
 }
 
 .product_info>p>span {
     color: white;
     font-size: 16px;
     font-weight: 400;
+    font-family: 'Inter SemiBold';
 }
 
 .link {
@@ -356,7 +366,8 @@ main.main {
     background-color: white;
     color: black;
     transition: .2s;
-    padding: 10px 40px;
+    padding: 15px 40px;
+    font-family: 'Inter Regular';
 }
 
 .product_buy:hover {
@@ -379,14 +390,63 @@ main.main {
 }
 
 .playlist {
-    font-size: 14px;
+    width: 350px;
+    font-weight: 400;
 }
 
 .playlist>p>span {
     color: #929292;
+    font-size: 13px;
+}
+/* MAIN PRODUCT END */
+
+
+
+/* MAIN REGISTER START */
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* MAIN PRODUCT END */
+.register_title {
+    font-size: 32px;
+    font-family: 'Prosto one';
+    margin-bottom: 15px;
+}
+
+.register_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register_form > .input {
+    margin-bottom: 10px;
+    background-color: white;
+    border: none;
+    padding: 10px 0px 10px 20px;
+    color: black;
+    font-weight: 400;
+}
+
+.register_form > .input:last-child {
+    margin-bottom: 0px;
+}
+
+.register_form > .input::placeholder {
+    color: black;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.register_form > .input:focus {
+}
+/* MAIN REGISTER END */
 
 /* MAIN END */
 
@@ -397,7 +457,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 100px 0px 20px 0px;
+    margin: 50px 0px 20px 0px;
 }
 
 .contact>div {
@@ -430,8 +490,9 @@ footer {
     position: relative;
     background-color: white;
     color: black;
-    padding: 10px 30px;
-    font-size: 14px;
+    padding: 10px 30px 12px;
+    font-size: 13px;
+    font-family: 'Inter Regular';
 }
 
 .button_up>svg {

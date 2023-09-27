@@ -32,7 +32,8 @@
         height: 250px;
     }
 
-    .product_info {
+    .product_info,
+    .playlist {
         width: 250px;
     }
 
@@ -40,6 +41,7 @@
         font-size: 13px;
         padding: 10px 30px;
     }
+
     /* PRODUCT PAGE END */
 }
 
@@ -79,7 +81,8 @@
         height: 300px;
     }
 
-    .product_info {
+    .product_info,
+    .playlist {
         width: 300px;
     }
 
@@ -87,6 +90,7 @@
         font-size: 14px;
         padding: 10px 35px;
     }
+
     /* PRODUCT PAGE END */
 }
 
@@ -127,10 +131,15 @@
         height: 325px;
     }
 
+    .playlist {
+        width: 325px;
+    }
+
     .product_buy {
         font-size: 15px;
         padding: 10px 35px;
     }
+
     /* PRODUCT PAGE END */
 }
 
