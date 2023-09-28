@@ -41,8 +41,15 @@
         font-size: 13px;
         padding: 10px 30px;
     }
-
     /* PRODUCT PAGE END */
+
+
+
+    /* REGISTER PAGE START */
+    .register_title {
+        font-size: 28px;
+    }
+    /* REGISTER PAGE END */
 }
 
 
@@ -92,6 +99,15 @@
     }
 
     /* PRODUCT PAGE END */
+
+
+
+    /* REGISTER PAGE START */
+    .register_title {
+        font-size: 32px;
+    }
+
+    /* REGISTER PAGE END */
 }
 
 
@@ -141,6 +157,15 @@
     }
 
     /* PRODUCT PAGE END */
+
+
+
+    /* REGISTER PAGE START */
+    .register_title {
+        font-size: 36px;
+    }
+
+    /* REGISTER PAGE END */
 }
 
 

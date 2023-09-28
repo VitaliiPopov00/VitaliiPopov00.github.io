@@ -1,7 +1,6 @@
 $(document).ready(function () {
     let heightHeader = $('.header').outerHeight(true);
     $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
-
     $('.card_img').css('height', $('.card').width());
     $('.nav_small_screen').css('height', `${$(window).height()}px`);
 
