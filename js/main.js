@@ -1,22 +1,62 @@
 $(document).ready(function () {
-    let heightHeader = $('.header').outerHeight(true);
-    $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
-    $('.card_img').css('height', $('.card').width());
-    $('.nav_small_screen').css('height', `${$(window).height()}px`);
+    let heightHeader = $('header').outerHeight(true);
 
-    $('.product_img').on('click', function() {
-        $(this).toggleClass('no-show');
-        $('.playlist').toggleClass('no-show');
-    });
+    console.log(heightHeader);
 
-    $('.playlist').on('click', function() {
-        $(this).toggleClass('no-show');
-        $('.product_img').toggleClass('no-show');
+    if ($(window).width() < 890) {
+        $('.register').css('height', `${$(window).height() - heightHeader}px`);
+        $('.login').css('height', `${$(window).height() - heightHeader}px`);
+        $('.nav_big_screen').addClass('no-show');
+        $('.menu_btn.main').removeClass('no-show');
+    } else {
+        $('.register').removeAttr('style');
+        $('.login').removeAttr('style');
+        $('.nav_big_screen').removeClass('no-show');
+        $('.menu_btn.main').addClass('no-show');
+    }
+
+    $(window).on('resize', function () {
+        if ($(window).width() < 890) {
+            $('.register').css('height', `${$(window).height() - heightHeader}px`);
+            $('.login').css('height', `${$(window).height() - heightHeader}px`);
+            $('.nav_big_screen').addClass('no-show');
+            $('.menu_btn.main').removeClass('no-show');
+        } else {
+            $('.register').removeAttr('style');
+            $('.login').removeAttr('style');
+            $('.nav_big_screen').removeClass('no-show');
+            $('.menu_btn.main').addClass('no-show');
+            $('.nav_small_screen').addClass('no-show');
+        }
     });
 
     $(window).on('resize', function () {
         $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
         $('.nav_small_screen').css('height', `${$(window).height()}px`);
+    });
+
+    $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
+    $('.card_img').css('height', `${$('.card').width()}px`);
+    $('.nav_small_screen').css('height', `${$(window).height()}px`);
+
+    $('.menu_btn.main').on('click', () => {
+        $('.menu_btn.main').addClass('no-show');
+        $('.nav_small_screen').slideToggle(300);
+    });
+
+    $('.menu_btn.second').on('click', () => {
+        $('.menu_btn.main').removeClass('no-show');
+        $('.nav_small_screen').slideToggle(300);
+    });
+
+    $('.product_img').on('click', function () {
+        $(this).toggleClass('no-show');
+        $('.playlist').toggleClass('no-show');
+    });
+
+    $('.playlist').on('click', function () {
+        $(this).toggleClass('no-show');
+        $('.product_img').toggleClass('no-show');
     });
 
     $('.card_button').on('click', function (e) {
@@ -32,7 +72,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.product_buy').on('click', function(e) {
+    $('.product_buy').on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('basket');
         $(this).parent().find('.operation').toggleClass('no-show product_count');
@@ -76,4 +116,14 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400);
     });
+
+    setTimeout(() => {
+        $('.loader').fadeToggle(300, () => {
+            $('header, main, footer').animate({
+                opacity: 1
+            }, 300, 'swing', () => {
+                $('header, main, footer').removeClass('opacity');
+            });
+        });
+    }, 150);
 });
