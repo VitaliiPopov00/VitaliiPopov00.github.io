@@ -34,12 +34,6 @@
     .playlist {
         width: 250px;
     }
-
-    .product_buy {
-        font-size: 13px;
-        padding: 10px 30px;
-    }
-
     /* PRODUCT PAGE END */
 
 
@@ -101,12 +95,6 @@
     .playlist {
         width: 300px;
     }
-
-    .product_buy {
-        font-size: 14px;
-        padding: 10px 35px;
-    }
-
     /* PRODUCT PAGE END */
 
 
@@ -168,11 +156,6 @@
     .playlist {
         width: 325px;
     }
-
-    .product_buy {
-        font-size: 15px;
-        padding: 10px 35px;
-    }
     /* PRODUCT PAGE END */
 
 
@@ -214,7 +197,10 @@
 @media (max-width: 890px) {
     .product {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .product > div{
+        align-self: center;
     }
 
     .product_second {

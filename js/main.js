@@ -1,26 +1,20 @@
 $(document).ready(function () {
-    let heightHeader = $('header').outerHeight(true);
-
-    console.log(heightHeader);
-
     if ($(window).width() < 890) {
-        $('.register').css('height', `${$(window).height() - heightHeader}px`);
-        $('.login').css('height', `${$(window).height() - heightHeader}px`);
         $('.nav_big_screen').addClass('no-show');
         $('.menu_btn.main').removeClass('no-show');
+        $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
     } else {
-        $('.register').removeAttr('style');
-        $('.login').removeAttr('style');
         $('.nav_big_screen').removeClass('no-show');
         $('.menu_btn.main').addClass('no-show');
     }
 
     $(window).on('resize', function () {
         if ($(window).width() < 890) {
-            $('.register').css('height', `${$(window).height() - heightHeader}px`);
-            $('.login').css('height', `${$(window).height() - heightHeader}px`);
             $('.nav_big_screen').addClass('no-show');
             $('.menu_btn.main').removeClass('no-show');
+            $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+            $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
         } else {
             $('.register').removeAttr('style');
             $('.login').removeAttr('style');
@@ -28,16 +22,15 @@ $(document).ready(function () {
             $('.menu_btn.main').addClass('no-show');
             $('.nav_small_screen').addClass('no-show');
         }
-    });
 
-    $(window).on('resize', function () {
-        $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
+        $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
         $('.nav_small_screen').css('height', `${$(window).height()}px`);
     });
 
-    $('.main_screen').css('height', `${$(window).height() - heightHeader}px`);
+    $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
     $('.card_img').css('height', `${$('.card').width()}px`);
     $('.nav_small_screen').css('height', `${$(window).height()}px`);
+    $('.basket_product_operation').css('width', `${$('.basket_section_operation_product').width()}px`)
 
     $('.menu_btn.main').on('click', () => {
         $('.menu_btn.main').addClass('no-show');
@@ -61,10 +54,10 @@ $(document).ready(function () {
 
     $('.card_button').on('click', function (e) {
         e.preventDefault();
-        $(this).toggleClass('basket');
+        $(this).toggleClass('basket_card');
         $(this).parent().find('.operation').toggleClass('no-show quantity_operation');
 
-        if ($(this).hasClass('basket')) {
+        if ($(this).hasClass('basket_card')) {
             $(this).html('В КОРЗИНЕ');
         } else {
             $(this).parent().find('.operation').find('.number').html('1');
@@ -74,10 +67,10 @@ $(document).ready(function () {
 
     $('.product_buy').on('click', function (e) {
         e.preventDefault();
-        $(this).toggleClass('basket');
+        $(this).toggleClass('basket_card');
         $(this).parent().find('.operation').toggleClass('no-show product_count');
 
-        if ($(this).hasClass('basket')) {
+        if ($(this).hasClass('basket_card')) {
             $(this).html('В КОРЗИНЕ');
         } else {
             $(this).parent().find('.operation').find('.number').html('1');
@@ -98,15 +91,21 @@ $(document).ready(function () {
         if (count == 1) {
             if ($(this).parent().hasClass('quantity_operation')) {
                 $(this).parent().toggleClass('no-show quantity_operation');
-                $(this).parent().parent().find('.card_button').html('КУПИТЬ').toggleClass('basket');
-            } else {
+                $(this).parent().parent().find('.card_button').html('КУПИТЬ').toggleClass('basket_card');
+            } else if ($(this).parent().hasClass('product_count')) {
                 $(this).parent().toggleClass('no-show product_count');
-                $(this).parent().parent().find('.product_buy').html('КУПИТЬ').toggleClass('basket');
+                $(this).parent().parent().find('.product_buy').html('КУПИТЬ').toggleClass('basket_card');
+            } else {
+                $(this).closest('.basket_product').css('display', 'none');
             }
             $(this).parent().find('.number').html('1');
         } else {
             $(this).parent().find('.number').html(count - 1);
         }
+    });
+
+    $('.basket_button').on('click', function(e) {
+        e.preventDefault();
     });
 
     $('.button_up').on('click', function (e) {
@@ -116,14 +115,4 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400);
     });
-
-    setTimeout(() => {
-        $('.loader').fadeToggle(300, () => {
-            $('header, main, footer').animate({
-                opacity: 1
-            }, 300, 'swing', () => {
-                $('header, main, footer').removeClass('opacity');
-            });
-        });
-    }, 150);
 });
