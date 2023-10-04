@@ -1,5 +1,6 @@
 /* ТЕЛЕФОНЫ */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+
     /* INDEX PAGE START */
     .container {
         width: 90%;
@@ -20,6 +21,7 @@
     .card_list {
         justify-content: center;
     }
+
     /* INDEX PAGE END */
 
 
@@ -34,6 +36,7 @@
     .playlist {
         width: 250px;
     }
+
     /* PRODUCT PAGE END */
 
 
@@ -53,6 +56,23 @@
     }
 
     /* LOGIN PAGE END */
+
+
+
+    /* BASKET PAGE START */
+    .basket_title {
+        font-size: 28px;
+    }
+
+    .basket_product_mobile {
+        justify-content: space-between;
+    }
+
+    .basket_product_info {
+        margin-right: 0;
+    }
+
+    /* BASKET PAGE END */
 }
 
 
@@ -95,6 +115,7 @@
     .playlist {
         width: 300px;
     }
+
     /* PRODUCT PAGE END */
 
 
@@ -114,6 +135,15 @@
     }
 
     /* LOGIN PAGE END */
+
+
+
+    /* BASKET PAGE START */
+    .basket_title {
+        font-size: 32px;
+    }
+
+    /* BASKET PAGE END */
 }
 
 
@@ -156,6 +186,7 @@
     .playlist {
         width: 325px;
     }
+
     /* PRODUCT PAGE END */
 
 
@@ -164,6 +195,7 @@
     .register_title {
         font-size: 36px;
     }
+
     /* REGISTER PAGE END */
 
 
@@ -172,13 +204,25 @@
     .login_title {
         font-size: 36px;
     }
+
     /* LOGIN PAGE END */
+
+
+
+    /* BASKET PAGE START */
+    .basket_title {
+        font-size: 36px;
+    }
+
+    /* BASKET PAGE END */
 }
 
 
 
 /* ПРОЧЕЕ */
 @media (max-width: 820px) {
+
+    /* FOOTER START */
     footer {
         flex-direction: column;
         align-items: center;
@@ -192,18 +236,63 @@
     .contact {
         order: 2;
     }
+
+    /* FOOTER END */
+
+
+
+    /* BASKET START */
+    .before_product {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .basket_title_section_product {
+        display: none;
+    }
+
+    .before_product {
+        display: none;
+    }
+
+    .basket_product_info {
+        margin-right: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .basket_product_name {
+        margin-left: 0;
+    }
+
+    .basket_product_operation {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* BASKET END */
 }
 
 @media (max-width: 890px) {
+
+    /* PRODUCT START */
     .product {
         flex-direction: column;
     }
 
-    .product > div{
+    .product>div {
         align-self: center;
     }
 
     .product_second {
         margin-top: 25px;
     }
+
+    /* PRODUCT START */
 }

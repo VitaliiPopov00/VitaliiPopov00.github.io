@@ -5,7 +5,6 @@ $(document).ready(function () {
                 opacity: 1
             }, 300, 'swing', () => {
                 $('header, main, footer').removeClass('opacity');
-                $('header, main, footer').removeAttr('style');
             });
         });
     }, 150);
