@@ -22,7 +22,7 @@
 
         <div class="nav nav_big_screen">
             <a href="products.html">ТОВАРЫ</a>
-            <a href="#">ПОИСК</a>
+            <a href="#" class="header_search">ПОИСК</a>
             <a href="basket.html">КОРЗИНА</a>
         </div>
 
@@ -64,7 +64,7 @@
                     <span>IOWA</span>
                 </p>
                 <p>АРТИСТ / ГРУППА<br>
-                    <span class="link">SLIPKNOT</span>
+                    <a class="link" href="products.html?artistId=1">SLIPKNOT</a>
                 </p>
                 <p>ГОД ВЫПУСКА АЛЬБОМА<br>
                     <span>2001</span>
@@ -73,7 +73,9 @@
                     <span>2010</span>
                 </p>
                 <p>ЖАНР<br>
-                    <span class="link">METAL</span> <span class="link">NU-METAL</span> <span class="link">RAPCORE</span>
+                    <a class="link" href="products.html?genreId=2">METAL</a> <a class="link"
+                        href="products.html?genreId=1">NU-METAL</a> <a class="link"
+                        href="products.html?genreId=4">RAPCORE</a>
                 </p>
                 <p>ЦЕНА<br>
                     <span>10 000 ₽</span>
@@ -169,7 +171,7 @@
 
             <div class="small_screen_middle">
                 <a href="products.html">ТОВАРЫ</a>
-                <a href="#">ПОИСК</a>
+                <a href="#" class="header_search">ПОИСК</a>
                 <a href="basket.html">КОРЗИНА</a>
             </div>
 
@@ -179,6 +181,20 @@
             </div>
         </div>
     </div>
+
+    <div class="search_input_header no-show">
+        <form action="products.html" class="form_search_header" method="get">
+            <input type="text" name="title" class="header_input_search" placeholder="ПОИСК ПО НАЗВАНИЮ"
+                data-title="">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="40" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
     <script src="js/jquery-3.7.1.js"></script>
     <script src="js/main.js"></script>
     <script src="js/loader.js"></script>
