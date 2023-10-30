@@ -34,3 +34,29 @@
 a {
     text-decoration: none;
 }
+
+h3 {
+    font-size: 40px;
+    font-family: 'Prosto one';
+}
+
+input {
+    outline: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+input:hover {
+    background-color: #ccc;
+    transition: .2s;
+}
+
+input:focus {
+    background-color: #ccc;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 1;
+    font-size: 13px;
+}

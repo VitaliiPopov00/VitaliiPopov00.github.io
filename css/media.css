@@ -1,5 +1,5 @@
 /* ТЕЛЕФОНЫ */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
     /* INDEX PAGE START */
     .container {
@@ -73,6 +73,19 @@
     }
 
     /* BASKET PAGE END */
+
+
+
+    /* PRODUCTS PAGE START */
+    .products_page_title {
+        font-size: 28px;
+    }
+
+    .filter_result {
+        font-size: 21px;
+    }
+
+    /* PRODUCTS PAGE END */
 }
 
 
@@ -144,11 +157,22 @@
     }
 
     /* BASKET PAGE END */
+
+    /* PRODUCTS PAGE START */
+    .products_page_title {
+        font-size: 32px;
+    }
+
+    .filter_result {
+        font-size: 25px;
+    }
+
+    /* PRODUCTS PAGE END */
 }
 
 
 
-/* ДЕСКТОП / АЛЬБОМНОЕ РАСПОЛОЖЕНИЕ ПЛАНШЕТОВ (НЕБОЛЬШИЕ ЭКРАНЫ) */
+/* ДЕСКТОП (НЕБОЛЬШИЕ ЭКРАНЫ) / АЛЬБОМНОЕ РАСПОЛОЖЕНИЕ ПЛАНШЕТОВ */
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
 
     /* INDEX PAGE START */
@@ -215,6 +239,17 @@
     }
 
     /* BASKET PAGE END */
+
+    /* PRODUCTS PAGE START */
+    .products_page_title {
+        font-size: 36px;
+    }
+
+    .filter_result {
+        font-size: 29px;
+    }
+
+    /* PRODUCTS PAGE END */
 }
 
 
@@ -246,9 +281,10 @@
         display: none;
     }
 
-    .mobile {
+    .basket_product_mobile {
         display: flex;
         margin-bottom: 20px;
+        justify-content: space-between;
     }
 
     .basket_title_section_product {
@@ -260,7 +296,6 @@
     }
 
     .basket_product_info {
-        margin-right: 50px;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
