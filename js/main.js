@@ -1,18 +1,19 @@
 $(document).ready(function () {
-    function addSpaces(str) {
-        var result = "";
-        var count = 0;
+    function getUrlVars() {
+        let vars = {};
+        if (window.location.href.indexOf('?') != -1) {
+            let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
 
-        for (var i = str.length - 1; i >= 0; i--) {
-            result = str[i] + result;
-            count++;
-
-            if (count % 3 === 0 && i !== 0) {
-                result = " " + result;
+            for (let i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                let hashName = hash[0];
+                vars[hashName] = hash[1];
             }
-        }
 
-        return result;
+            return vars;
+        } else {
+            return false;
+        }
     }
 
     if ($(window).width() < 890) {
@@ -111,9 +112,9 @@ $(document).ready(function () {
         let startPrice = Number($('.filter_price_start').val().replace(/\s/g, ''));
         let endPrice = Number($('.filter_price_end').val().replace(/\s/g, ''));
         let filterSearch = $('.products_filter_item_search_input').val().trim();
-        startPrice = startPrice ? `start_price=${startPrice};` : '';
-        endPrice = endPrice ? `end_price=${endPrice};` : '';
-        filterSearch = filterSearch ? `title=${filterSearch};` : '';
+        startPrice = startPrice ? `start_price=${startPrice}&` : '';
+        endPrice = endPrice ? `end_price=${endPrice}&` : '';
+        filterSearch = filterSearch ? `title=${filterSearch}&` : '';
 
         params += startPrice + endPrice + filterSearch;
 
@@ -124,18 +125,12 @@ $(document).ready(function () {
         filters.each((index, el) => {
             let filter = Object.entries($(el).find('button > p').data())[0];
             if (filter[1]) {
-                params += filter.join('=') + ';';
+                params += filter.join('=') + '&';
             }
         });
 
-        if (filterSearch == 'title=admin_test_test;') {
-            $('.filter_result').addClass('no-show');
-            $('.filter_result.not-found').removeClass('no-show');
-            $('.card_list').addClass('no-show');
-        } else {
-            if (params) {
-                window.location.href = url + '?' + params;
-            }
+        if (params) {
+            window.location.href = url + '?' + params.slice(0, -1);
         }
 
     });
@@ -236,4 +231,44 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400);
     });
+
+    if (window.location.href.includes('products')) {
+        let attrs = getUrlVars();
+
+        if (attrs) {
+            if (attrs['artistId']) {
+                $('p[data-artist-id=""]').data('artistId', attrs['artistId']).text($(`p[data-artist-id=${attrs['artistId']}]`).text());
+            }
+
+            if (attrs['genreId']) {
+                $('p[data-genre-id=""]').data('genreId', attrs['genreId']).text($(`p[data-genre-id=${attrs['genreId']}]`).text());
+            }
+
+            if (attrs['start_price']) {
+                $('input[data-start-price]').val(attrs['start_price']);
+            }
+
+            if (attrs['end_price']) {
+                $('input[data-end-price]').val(attrs['end_price']);
+            }
+
+            if (attrs['title']) {
+                if (attrs['title'] == 'admin_test_test') {
+                    $('.filter_result').addClass('no-show');
+                    $('.filter_result.not-found').removeClass('no-show');
+                    $('.card_list').addClass('no-show');
+                } else {
+                    $('input[data-title]').val(attrs['title']);
+                }
+            }
+        }
+    }
+
+    $('.search_input_header').css('top', $('header').outerHeight(true));
+    $('.header_search').on('click', function (e) {
+        e.preventDefault();
+        $('.search_input_header').toggleClass('no-show');
+        $('header, main, footer').toggleClass('blur');
+    });
+
 });
