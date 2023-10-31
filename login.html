@@ -23,7 +23,7 @@
 
         <div class="nav nav_big_screen">
             <a href="products.html">ТОВАРЫ</a>
-            <a href="#">ПОИСК</a>
+            <a href="#" class="header_search">ПОИСК</a>
             <a href="basket.html">КОРЗИНА</a>
         </div>
 
@@ -44,9 +44,9 @@
             <h3 class="login_title">
                 АВТОРИЗАЦИЯ
             </h3>
-            <form action="#" class="login_form">
-                <input type="text" placeholder="ЛОГИН" class="input">
-                <input type="password" placeholder="ПАРОЛЬ" class="input">
+            <form action="" class="login_form">
+                <input type="text" name="login" placeholder="ЛОГИН" class="input error">
+                <input type="password" name="password" placeholder="ПАРОЛЬ" class="input">
                 <button class="login_button">ВОЙТИ</button>
             </form>
             <p>НЕТ АККАУНТА?<br><a href="register.html" class="redirect_form">ЗАРЕГИСТРИРОВАТЬСЯ</a></p>
@@ -84,6 +84,7 @@
             </svg>
 
             <p>designed by vpopov</p>
+            <p>javalets™</p>
 
             <a href="https://vk.com/vpopov23" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48" width="30px" fill="#808080">
@@ -132,7 +133,7 @@
 
             <div class="small_screen_middle">
                 <a href="products.html">ТОВАРЫ</a>
-                <a href="#">ПОИСК</a>
+                <a href="#" class="header_search header_search_mobile">ПОИСК</a>
                 <a href="basket.html">КОРЗИНА</a>
             </div>
 
@@ -140,6 +141,26 @@
                 <a href="login.html">ВОЙТИ</a>
                 <a href="register.html">РЕГИСТРАЦИЯ</a>
             </div>
+        </div>
+    </div>
+
+    <!-- ПОИСКОВОЕ ПОЛЕ -->
+    <div class="search_input_header no-show">
+        <form action="products.html" class="form_search_header" method="get">
+            <input type="text" name="title" class="header_input_search" placeholder="ПОИСК ПО НАЗВАНИЮ" data-title="">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="40" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+            </button>
+        </form>
+        <div class="search_list_result no-show">
+            <a href="product.html?product_id=1">RESULT</a>
+            <a href="product.html?product_id=2">RESULT</a>
+            <a href="product.html?product_id=3">RESULT</a>
+            <a href="product.html?product_id=4">RESULT</a>
+            <a href="404.html">RESULT</a>
         </div>
     </div>
     <script src="js/jquery-3.7.1.js"></script>

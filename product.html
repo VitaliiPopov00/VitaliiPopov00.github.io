@@ -123,6 +123,7 @@
             </svg>
 
             <p>designed by vpopov</p>
+            <p>javalets™</p>
 
             <a href="https://vk.com/vpopov23" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48" width="30px" fill="#808080">
@@ -171,7 +172,7 @@
 
             <div class="small_screen_middle">
                 <a href="products.html">ТОВАРЫ</a>
-                <a href="#" class="header_search">ПОИСК</a>
+                <a href="#" class="header_search header_search_mobile">ПОИСК</a>
                 <a href="basket.html">КОРЗИНА</a>
             </div>
 
@@ -182,10 +183,10 @@
         </div>
     </div>
 
+    <!-- ПОИСКОВОЕ ПОЛЕ -->
     <div class="search_input_header no-show">
         <form action="products.html" class="form_search_header" method="get">
-            <input type="text" name="title" class="header_input_search" placeholder="ПОИСК ПО НАЗВАНИЮ"
-                data-title="">
+            <input type="text" name="title" class="header_input_search" placeholder="ПОИСК ПО НАЗВАНИЮ" data-title="">
             <button type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="40" viewBox="0 -960 960 960" width="24">
                     <path
@@ -193,6 +194,13 @@
                 </svg>
             </button>
         </form>
+        <div class="search_list_result no-show">
+            <a href="product.html?product_id=1">RESULT</a>
+            <a href="product.html?product_id=2">RESULT</a>
+            <a href="product.html?product_id=3">RESULT</a>
+            <a href="product.html?product_id=4">RESULT</a>
+            <a href="404.html">RESULT</a>
+        </div>
     </div>
 
     <script src="js/jquery-3.7.1.js"></script>
