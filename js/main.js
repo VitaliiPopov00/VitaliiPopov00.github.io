@@ -60,6 +60,7 @@ $(document).ready(function () {
     $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
     $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
     $('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
+    $('.search_input_header').css('top', $('header').outerHeight(true));
 
 
     if ($(window).width() > 820) {
@@ -264,11 +265,62 @@ $(document).ready(function () {
         }
     }
 
-    $('.search_input_header').css('top', $('header').outerHeight(true));
-    $('.header_search').on('click', function (e) {
-        e.preventDefault();
-        $('.search_input_header').toggleClass('no-show');
-        $('header, main, footer').toggleClass('blur');
+    $(document).on('click', function (event) {
+        if (!$('.search_input_header').hasClass('no-show') && !$(event.target).closest('.search_input_header').length) {
+            $('.search_input_header').addClass('no-show');
+            $('header, main, footer').removeClass('blur');
+        }
     });
 
+    $('.header_search').on('click', function (e) {
+        setTimeout(() => {
+            e.preventDefault();
+
+            if ($(this).hasClass('header_search_mobile')) {
+                $('.menu_btn.main').removeClass('no-show');
+                $('.nav_small_screen').slideToggle(0);
+            }
+
+            $('header, main, footer').addClass('blur');
+            $('.search_input_header').removeClass('no-show');
+        }, 1);
+    });
+
+    $('.header_input_search').on('input', function (e) {
+        if ($(this).val().length > 2) {
+            $('.search_list_result').removeClass('no-show');
+        } else {
+            $('.search_list_result').addClass('no-show');
+        }
+    });
+
+    $('.login_button').on('click', function (e) {
+        e.preventDefault();
+        let formValue = $(this).parent().serialize().split('&').map(value => value.split('='));
+
+        fetch('../database/user.json')
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
+                let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
+                let user = data.users.filter(user => {
+                    return user.login == login ? true : false;
+                });
+
+                if (user.length) {
+                    if (user[0].password == password) {
+                        sessionStorage.setItem('login', 'admin');
+                    } else {
+                        throw { message: "Пароль введен неверно", attributeName: "password" };
+                    }
+                } else {
+                    throw { message: "Пользователь не найден", attributeName: "login" };
+                }
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    })
 });
