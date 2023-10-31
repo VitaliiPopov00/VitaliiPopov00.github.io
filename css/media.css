@@ -86,6 +86,15 @@
     }
 
     /* PRODUCTS PAGE END */
+
+
+
+    /* SEARCH INPUT START */
+    .search_input_header {
+        width: calc(100% - 40px);
+    }
+
+    /* SEARCH INPUT END */
 }
 
 
@@ -168,6 +177,15 @@
     }
 
     /* PRODUCTS PAGE END */
+
+
+
+    /* SEARCH INPUT START */
+    .search_input_header {
+        width: calc(100% - 100px);
+    }
+
+    /* SEARCH INPUT END */
 }
 
 
@@ -250,6 +268,15 @@
     }
 
     /* PRODUCTS PAGE END */
+
+
+
+    /* SEARCH INPUT START */
+    .search_input_header {
+        width: 650px;
+    }
+
+    /* SEARCH INPUT END */
 }
 
 
