@@ -182,6 +182,11 @@ header {
 .search_list_result > a:hover {
     background-color: #ccc;
 }
+
+.nav>a.auth_user:first-child {
+    margin-left: 0px;
+}
+
 /* HEADER END */
 
 
@@ -466,6 +471,19 @@ main.main {
     border: none;
     padding: 12px 0px 12px 20px;
     color: black;
+    transition: 0s;
+}
+
+.register_form>.input:hover {
+    background-color: #ccc;
+}
+
+.register_form>.input:focus {
+    background-color: #ccc;
+}
+
+.register_form>.input.error {
+    border: 3px #842029 solid;
 }
 
 .input:last-child {
@@ -529,6 +547,7 @@ main.main {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    transition: .2s;
 }
 
 .login_form>.input {
@@ -541,8 +560,16 @@ main.main {
     box-sizing: border-box;
 }
 
+.login_form>.input:hover {
+    background-color: #ccc;
+}
+
+.login_form>.input:focus {
+    background-color: #ccc;
+}
+
 .login_form>.input.error {
-    border: 3px rgb(255, 41, 41) solid;
+    border: 3px #842029 solid;
 }
 
 .input:last-child {
@@ -553,6 +580,14 @@ main.main {
     color: black;
     opacity: 1;
     font-size: 13px;
+}
+
+.input_error {
+    font-size: 13px;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+    color: #DC3545;
 }
 
 .login_button {
@@ -566,8 +601,7 @@ main.main {
 }
 
 .login_button:hover {
-    background-color: black;
-    color: white;
+    background-color: #ccc;
 }
 
 /* MAIN LOGIN END */
@@ -889,7 +923,7 @@ footer {
 
 
 
-/* 404 PAGE */
+/* 404 PAGE START*/
 .error_page {
     width: 100%;
     height: 100%;
@@ -936,5 +970,4 @@ footer {
 .error_home_link:hover {
     background-color: #ccc;
 }
-
-
+/* 404 PAGE END */

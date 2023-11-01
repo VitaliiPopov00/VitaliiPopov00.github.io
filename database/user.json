@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "login": "admin",
+            "password": "rootroot"
+        },
+        {
+            "login": "vpopov",
+            "password": "test123"
+        }
+    ]
+}

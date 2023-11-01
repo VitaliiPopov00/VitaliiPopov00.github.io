@@ -45,10 +45,18 @@
                 РЕГИСТРАЦИЯ
             </h3>
             <form action="#" class="register_form">
-                <input type="email" placeholder="ПОЧТА" class="input">
-                <input type="text" placeholder="ЛОГИН" class="input">
-                <input type="password" placeholder="ПАРОЛЬ" class="input">
-                <input type="password" placeholder="ПОДТВЕРЖДЕНИЕ ПАРОЛЯ" class="input">
+                <input type="email" name="email" placeholder="ПОЧТА" class="input">
+                <div class="input_error email_error">
+                </div>
+                <input type="text" name="login" placeholder="ЛОГИН" class="input">
+                <div class="input_error login_error">
+                </div>
+                <input type="password" name="password" placeholder="ПАРОЛЬ" class="input">
+                <div class="input_error password_error">
+                </div>
+                <input type="password" name="password_repeat" placeholder="ПОДТВЕРЖДЕНИЕ ПАРОЛЯ" class="input">
+                <div class="input_error password_repeat_error">
+                </div>
                 <button class="register_button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
             </form>
             <p>ЕСТЬ АККАУНТ? <a href="login.html" class="redirect_form">ВОЙТИ</a></p>

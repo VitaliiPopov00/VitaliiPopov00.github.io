@@ -16,7 +16,21 @@ $(document).ready(function () {
         }
     }
 
-    if ($(window).width() < 890) {
+    if (window.location.href.includes('logout')) {
+        if (sessionStorage.getItem('login')) {
+            sessionStorage.removeItem('login');
+            window.location = 'index.html';
+        } else {
+            window.location = '403.html';
+        }
+    }
+
+    if (sessionStorage.getItem('login')) {
+        $('a.no_auth_user').addClass('no-show');
+        $('a.auth_user').removeClass('no-show');
+    }
+
+    if ($(window).width() < 960) {
         $('.nav_big_screen').addClass('no-show');
         $('.menu_btn.main').removeClass('no-show');
     } else {
@@ -25,7 +39,7 @@ $(document).ready(function () {
     }
 
     $(window).on('resize', function () {
-        if ($(window).width() < 890) {
+        if ($(window).width() < 960) {
             $('.nav_big_screen').addClass('no-show');
             $('.menu_btn.main').removeClass('no-show');
         } else {
@@ -294,6 +308,10 @@ $(document).ready(function () {
         }
     });
 
+    $('.login_form>input').on('input', function(e) {
+        $(this).removeClass('error').next().text('');
+    });
+
     $('.login_button').on('click', function (e) {
         e.preventDefault();
         let formValue = $(this).parent().serialize().split('&').map(value => value.split('='));
@@ -311,7 +329,8 @@ $(document).ready(function () {
 
                 if (user.length) {
                     if (user[0].password == password) {
-                        sessionStorage.setItem('login', 'admin');
+                        sessionStorage.setItem('login', login);
+                        window.location = 'index.html';
                     } else {
                         throw { message: "Пароль введен неверно", attributeName: "password" };
                     }
@@ -320,7 +339,47 @@ $(document).ready(function () {
                 }
             })
             .catch(e => {
-                console.log(e);
+                $(`input[name=${e.attributeName}]`).addClass('error');
+                $(`.${e.attributeName}_error`).text(e.message);
             });
-    })
+    });
+
+    $('.register_form>input').on('input', function(e) {
+        $(this).removeClass('error').next().text('');
+    });
+
+    $('.register_button').on('click', function (e) {
+        e.preventDefault();
+        let formValue = $(this).parent().serialize().split('&').map(value => value.split('='));
+
+        fetch('../database/user.json')
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
+                let email = formValue.filter(value => { return value.indexOf('email') != -1 ? true : false })[0][1];
+                let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
+                let password_repeat = formValue.filter(value => { return value.indexOf('password_repeat') != -1 ? true : false })[0][1];
+                
+                let userByLogin = data.users.filter(user => {
+                    return user.login == login ? true : false;
+                });
+                let userByEmail = data.users.filter(user => {
+                    return user.email == email ? true : false;
+                });
+
+                if (userByEmail.length) {
+                    throw { message: "Пользователь с такой почтой уже существует", attributeName: "email" };
+                }
+
+                if (userByLogin.length) {
+                    throw { message: "Пользователь с таким логином уже существует", attributeName: "login" };
+                }
+            })
+            .catch(e => {
+                $(`input[name=${e.attributeName}]`).addClass('error');
+                $(`.${e.attributeName}_error`).text(e.message);
+            });
+    });
 });

@@ -27,7 +27,7 @@
             <a href="basket.html">КОРЗИНА</a>
         </div>
 
-        <div class="nav nav_big_screen">
+        <div class="nav nav_big_screen no-auth-user">
             <a href="login.html">ВОЙТИ</a>
             <a href="register.html">РЕГИСТРАЦИЯ</a>
         </div>
@@ -45,8 +45,12 @@
                 АВТОРИЗАЦИЯ
             </h3>
             <form action="" class="login_form">
-                <input type="text" name="login" placeholder="ЛОГИН" class="input error">
-                <input type="password" name="password" placeholder="ПАРОЛЬ" class="input">
+                <input type="text" name="login" placeholder="ЛОГИН" class="input" required>
+                <div class="input_error login_error">
+                </div>
+                <input type="password" name="password" placeholder="ПАРОЛЬ" class="input" required>
+                <div class="input_error password_error">
+                </div>
                 <button class="login_button">ВОЙТИ</button>
             </form>
             <p>НЕТ АККАУНТА?<br><a href="register.html" class="redirect_form">ЗАРЕГИСТРИРОВАТЬСЯ</a></p>
@@ -94,9 +98,9 @@
         </div>
 
         <a href="#" class="button_up">НАВЕРХ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
-            width="15">
-            <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
-        </svg></a>
+                width="15">
+                <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
+            </svg></a>
     </footer>
 
     <!-- ЛОАДЕР -->
