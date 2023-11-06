@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).ready(function () {
     setTimeout(() => {
         $('.loader').fadeToggle(300, () => {
             $('header, main, footer').animate({
