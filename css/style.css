@@ -264,11 +264,25 @@ main.main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    transition: .2s;
+}
+
+.card_img {
+    overflow: hidden;
+}
+
+.card:hover {
+    background-color: #ccc;
+}
+
+.card:hover .card_img img {
+    transform: scale(1.1);
 }
 
 .card_img img {
     width: 100%;
     object-fit: cover;
+    transition: .2s;
 }
 
 .card_info {
@@ -306,7 +320,7 @@ main.main {
 }
 
 .card_button:hover {
-    background-color: white;
+    background-color: transparent;
     color: black;
 }
 
@@ -586,7 +600,6 @@ main.main {
     font-size: 13px;
     position: relative;
     bottom: 20px;
-    left: 5px;
     color: #DC3545;
 }
 
@@ -746,6 +759,19 @@ main.main {
     gap: 60px;
 }
 
+.products_filter_item button svg {
+    transition: .2s;
+}
+
+.products_filter_item:hover button svg {
+    transform: rotate(180deg);
+}
+
+.products_filter_item:hover .products_filter_item_list {
+    display: block;
+    opacity: 1;
+}
+
 .products_filter_item {
     position: relative;
     min-width: 170px;
@@ -777,6 +803,10 @@ main.main {
     min-width: 200px;
     transform: translate(-50%, 0);
     padding-top: 5px;
+    max-height: 150px;
+    overflow: auto;
+    display: none;
+    opacity: 0;
 }
 
 .products_filter_item_list > p {
@@ -894,7 +924,6 @@ footer {
 .blur {
     filter: blur(5px);
     pointer-events: none;
-    transition: .2s;
 }
 
 .opacity {
@@ -971,3 +1000,9 @@ footer {
     background-color: #ccc;
 }
 /* 404 PAGE END */
+
+.special_misha {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

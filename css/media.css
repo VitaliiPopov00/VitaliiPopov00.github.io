@@ -95,6 +95,14 @@
     }
 
     /* SEARCH INPUT END */
+
+
+    /* INPUT ERROR START */
+    .input_error {
+        font-size: 10px;
+    }
+
+    /* INPUT ERROR END */
 }
 
 
@@ -186,6 +194,15 @@
     }
 
     /* SEARCH INPUT END */
+
+
+
+    /* INPUT ERROR START */
+    .input_error {
+        font-size: 11px;
+    }
+
+    /* INPUT ERROR END */
 }
 
 
@@ -277,6 +294,15 @@
     }
 
     /* SEARCH INPUT END */
+
+
+
+    /* INPUT ERROR START */
+    .input_error {
+        font-size: 12px;
+    }
+
+    /* INPUT ERROR END */
 }
 
 
