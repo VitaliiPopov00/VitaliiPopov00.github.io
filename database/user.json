@@ -1,12 +1,12 @@
-{
-    "users": [
-        {
-            "login": "admin",
-            "password": "rootroot"
-        },
-        {
-            "login": "vpopov",
-            "password": "test123"
-        }
-    ]
-}
+[
+    {
+        "login": "admin",
+        "email": "admin@gmail.com",
+        "password": "rootroot"
+    },
+    {
+        "login": "vpopov",
+        "email": "vpopov@gmail.com",
+        "password": "test123"
+    }
+]

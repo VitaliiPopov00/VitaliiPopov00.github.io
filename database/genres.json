@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Alternative"
+    },
+    {
+        "id": 2,
+        "title": "Blues"
+    },
+    {
+        "id": 3,
+        "title": "Classical"
+    },
+    {
+        "id": 5,
+        "title": "Dance"
+    },
+    {
+        "id": 6,
+        "title": "Electronic"
+    },
+    {
+        "id": 7,
+        "title": "Folk"
+    },
+    {
+        "id": 8,
+        "title": "Hip Hop"
+    },
+    {
+        "id": 9,
+        "title": "Indie"
+    },
+    {
+        "id": 10,
+        "title": "Jazz"
+    },
+    {
+        "id": 12,
+        "title": "Metal"
+    },
+    {
+        "id": 13,
+        "title": "Pop"
+    },
+    {
+        "id": 14,
+        "title": "R&B"
+    },
+    {
+        "id": 15,
+        "title": "Nu-Metal"
+    },
+    {
+        "id": 16,
+        "title": "Rock"
+    },
+    {
+        "id": 17,
+        "title": "Soul"
+    },
+    {
+        "id": 20,
+        "title": "Disco"
+    },
+    {
+        "id": 24,
+        "title": "Punk"
+    },
+    {
+        "id": 27,
+        "title": "Hard rock"
+    },
+    {
+        "id": 28,
+        "title": "Heavy metal"
+    },
+    {
+        "id": 31,
+        "title": "Rap"
+    },
+    {
+        "id": 32,
+        "title": "Trap"
+    },
+    {
+        "id": 33,
+        "title": "Dubstep"
+    },
+    {
+        "id": 34,
+        "title": "Drum and bass"
+    },
+    {
+        "id": 35,
+        "title": "Salsa"
+    },
+    {
+        "id": 36,
+        "title": "Rapcore"
+    },
+    {
+        "id": 40,
+        "title": "Instrumental"
+    },
+    {
+        "id": 41,
+        "title": "Ambient"
+    },
+    {
+        "id": 45,
+        "title": "Soul music"
+    },
+    {
+        "id": 49,
+        "title": "House"
+    },
+    {
+        "id": 50,
+        "title": "Techno"
+    }
+]
