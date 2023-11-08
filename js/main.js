@@ -96,14 +96,6 @@ $(document).ready(function () {
         $('.nav_small_screen').slideToggle(300);
     });
 
-    $('.products_filter_item_list > p').on('click', function (e) {
-        let value = $(this).text().trim();
-        let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
-        let dataAttributeValue = $(this).data(dataAttributeName);
-
-        $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
-    });
-
     $('.products_filter_item_list_input-price').on('input', function (e) {
         let value = Number($(this).val().replace(/[^0-9]/, ''));
         $(this).val(value.toLocaleString('ru-RU'));
@@ -148,18 +140,6 @@ $(document).ready(function () {
             window.location.href = url + '?' + params.slice(0, -1);
         }
 
-    });
-
-    $('.products_filter_item').hover(function () {
-        $(this).find('button > svg').animate({ rotate: '+=180deg' }, 200);
-        $(this).find('.products_filter_item_list').toggleClass('no-show').animate({ opacity: 1 }, 200, 'swing', function () {
-            $(this).toggleClass('opacity');
-        });
-    }, function () {
-        $(this).find('button > svg').animate({ rotate: '-=180deg' }, 200);
-        $(this).find('.products_filter_item_list').animate({ opacity: 0 }, 200, 'swing', function () {
-            $(this).toggleClass('no-show opacity');
-        });
     });
 
     $('.card_button').on('click', function (e) {
@@ -308,78 +288,149 @@ $(document).ready(function () {
         }
     });
 
-    $('.login_form>input').on('input', function(e) {
+    $('.login_form>input').on('input', function (e) {
         $(this).removeClass('error').next().text('');
     });
 
     $('.login_button').on('click', function (e) {
         e.preventDefault();
         let formValue = $(this).parent().serialize().split('&').map(value => value.split('='));
+        let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
+        let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
+        let errors = [];
 
         fetch('../database/user.json')
             .then(response => {
                 return response.json();
             })
             .then(data => {
-                let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
-                let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
-                let user = data.users.filter(user => {
-                    return user.login == login ? true : false;
-                });
+                if (!login) {
+                    errors.push({ message: "Заполните поле", attributeName: "login" });
+                }
 
-                if (user.length) {
-                    if (user[0].password == password) {
-                        sessionStorage.setItem('login', login);
-                        window.location = 'index.html';
+                if (!password) {
+                    errors.push({ message: "Заполните поле", attributeName: "password" });
+                }
+
+                if (!errors.length) {
+                    let user = data.filter(user => {
+                        return user.login == login ? true : false;
+                    });
+
+                    if (user.length) {
+                        if (user[0].password == password) {
+                            sessionStorage.setItem('login', login);
+                            window.location = 'index.html';
+                        } else {
+                            errors.push({ message: "Пароль введен неверно", attributeName: "password" });
+                        }
                     } else {
-                        throw { message: "Пароль введен неверно", attributeName: "password" };
+                        errors.push({ message: "Пользователь не найден", attributeName: "login" });
                     }
-                } else {
-                    throw { message: "Пользователь не найден", attributeName: "login" };
+                }
+
+                if (errors.length) {
+                    throw errors;
                 }
             })
-            .catch(e => {
-                $(`input[name=${e.attributeName}]`).addClass('error');
-                $(`.${e.attributeName}_error`).text(e.message);
-            });
+            .catch(addErrorInput);
     });
 
-    $('.register_form>input').on('input', function(e) {
+    $('.register_form>input').on('input', function (e) {
         $(this).removeClass('error').next().text('');
     });
 
     $('.register_button').on('click', function (e) {
         e.preventDefault();
         let formValue = $(this).parent().serialize().split('&').map(value => value.split('='));
+        let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
+        let email = formValue.filter(value => { return value.indexOf('email') != -1 ? true : false })[0][1].replace('%40', '@');
+        let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
+        let password_repeat = formValue.filter(value => { return value.indexOf('password_repeat') != -1 ? true : false })[0][1];
+        let errors = [];
 
         fetch('../database/user.json')
             .then(response => {
                 return response.json();
             })
             .then(data => {
-                let login = formValue.filter(value => { return value.indexOf('login') != -1 ? true : false })[0][1];
-                let email = formValue.filter(value => { return value.indexOf('email') != -1 ? true : false })[0][1];
-                let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
-                let password_repeat = formValue.filter(value => { return value.indexOf('password_repeat') != -1 ? true : false })[0][1];
-                
-                let userByLogin = data.users.filter(user => {
-                    return user.login == login ? true : false;
-                });
-                let userByEmail = data.users.filter(user => {
-                    return user.email == email ? true : false;
-                });
-
-                if (userByEmail.length) {
-                    throw { message: "Пользователь с такой почтой уже существует", attributeName: "email" };
+                if (!login) {
+                    errors.push({ message: "Заполните поле", attributeName: "login" });
                 }
 
-                if (userByLogin.length) {
-                    throw { message: "Пользователь с таким логином уже существует", attributeName: "login" };
+                if (!email) {
+                    errors.push({ message: "Заполните поле", attributeName: "email" });
+                }
+
+                if (!password) {
+                    errors.push({ message: "Заполните поле", attributeName: "password" });
+                }
+
+                if (password && !password_repeat) {
+                    errors.push({ message: "Заполните поле", attributeName: "password_repeat" });
+                }
+
+                if (!errors.length) {
+                    if (password != password_repeat) {
+                        errors.push({ message: "Пароли не совпадают", attributeName: "password_repeat" });
+                    } else {
+                        let userByLogin = data.filter(user => {
+                            return user.login == login ? true : false;
+                        });
+                        let userByEmail = data.filter(user => {
+                            return user.email == email ? true : false;
+                        });
+
+                        if (userByEmail.length) {
+                            errors.push({ message: "Пользователь с такой почтой уже существует", attributeName: "email" });
+                        }
+
+                        if (userByLogin.length) {
+                            errors.push({ message: "Пользователь с таким логином уже существует", attributeName: "login" });
+                        }
+                    }
+                }
+
+                if (errors.length) {
+                    throw errors;
                 }
             })
-            .catch(e => {
-                $(`input[name=${e.attributeName}]`).addClass('error');
-                $(`.${e.attributeName}_error`).text(e.message);
-            });
+            .catch(addErrorInput);
     });
+
+    fetch('../database/genres.json')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            $('.genre-list').html(getGenreListHTML(data));
+        });
+
+    $('.products_filter_item_list > p').on('click', function (e) {
+        console.log('test');
+        let value = $(this).text().trim();
+        let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
+        let dataAttributeValue = $(this).data(dataAttributeName);
+
+        $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
+    });
+
+    function addErrorInput(errors) {
+        errors.forEach(error => {
+            $(`input[name=${error.attributeName}]`).addClass('error');
+            $(`.${error.attributeName}_error`).text(error.message);
+        });
+    }
+
+    function getGenreListHTML(genreList) {
+        let html = '';
+
+        genreList.forEach(genre => {
+            html += `<p data-genre-id="${genre.id}">
+                        ${genre.title.toUpperCase()}
+                    </p>`;
+        });
+
+        return html;
+    }
 });
