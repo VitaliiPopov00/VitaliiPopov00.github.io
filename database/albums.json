@@ -1,0 +1,312 @@
+[
+    {
+        "id": 1,
+        "title": "30",
+        "artist_id": 1,
+        "year_release_album": "2021",
+        "year_release_plate": "2023",
+        "genres": [17, 10, 13],
+        "price": "3500",
+        "logo": "img/vinyl/adele_30.png"
+    },
+    {
+        "id": 2,
+        "title": "Beyonce",
+        "artist_id": 2,
+        "year_release_album": "2013",
+        "year_release_plate": "2013",
+        "genres": [14],
+        "price": "5000",
+        "logo": "img/vinyl/beyonce_beyonce.png"
+    },
+    {
+        "id": 3,
+        "title": "Unorthodox Jukebox",
+        "artist_id": 3,
+        "year_release_album": "2012",
+        "year_release_plate": "2013",
+        "genres": [14, 13, 16],
+        "price": "1500",
+        "logo": "img/vinyl/brunomars_unorthodoxjukebox.png"
+    },
+    {
+        "id": 4,
+        "title": "Parachutes",
+        "artist_id": 4,
+        "year_release_album": "2000",
+        "year_release_plate": "2005",
+        "genres": [16],
+        "price": "2000",
+        "logo": "img/vinyl/coldplay_parachutes.png"
+    },
+    {
+        "id": 5,
+        "title": "Views",
+        "artist_id": 5,
+        "year_release_album": "2016",
+        "year_release_plate": "2016",
+        "genres": [8, 14, 5],
+        "price": "10000",
+        "logo": "img/vinyl/drake_views.png"
+    },
+    {
+        "id": 6,
+        "title": "Autumn Variations",
+        "artist_id": 6,
+        "year_release_album": "2023",
+        "year_release_plate": "2023",
+        "genres": [7],
+        "price": "1000",
+        "logo": "img/vinyl/edsheeran_autumnvariations.png"
+    },
+    {
+        "id": 7,
+        "title": "Kamikaze",
+        "artist_id": 7,
+        "year_release_album": "2018",
+        "year_release_plate": "2023",
+        "genres": [8],
+        "price": "1500",
+        "logo": "img/vinyl/eminem_kamikaze.png"
+    },
+    {
+        "id": 8,
+        "title": "The Blueprint",
+        "artist_id": 8,
+        "year_release_album": "2001",
+        "year_release_plate": "2001",
+        "genres": [8],
+        "price": "3500",
+        "logo": "img/vinyl/jay-z_theblueprint.png"
+    },
+    {
+        "id": 9,
+        "title": "Changes",
+        "artist_id": 9,
+        "year_release_album": "2020",
+        "year_release_plate": "2020",
+        "genres": [13, 14, 32],
+        "price": "3500",
+        "logo": "img/vinyl/justinbieber_changes.png"
+    },
+    {
+        "id": 10,
+        "title": "Ye",
+        "artist_id": 10,
+        "year_release_album": "2018",
+        "year_release_plate": "2020",
+        "genres": [8],
+        "price": "10000",
+        "logo": "img/vinyl/kanyewest_ye.png"
+    },
+    {
+        "id": 11,
+        "title": "Smile",
+        "artist_id": 11,
+        "year_release_album": "2020",
+        "year_release_plate": "2020",
+        "genres": [13],
+        "price": "8000",
+        "logo": "img/vinyl/katyperry_smile.png"
+    },
+    {
+        "id": 12,
+        "title": "Joanne",
+        "artist_id": 12,
+        "year_release_album": "2016",
+        "year_release_plate": "2016",
+        "genres": [5, 16],
+        "price": "6000",
+        "logo": "img/vinyl/ladygaga_joanne.png"
+    },
+    {
+        "id": 13,
+        "title": "Madonna",
+        "artist_id": 13,
+        "year_release_album": "1983",
+        "year_release_plate": "2000",
+        "genres": [5, 20],
+        "price": "5500",
+        "logo": "img/vinyl/madonna_madonna.png"
+    },
+    {
+        "id": 14,
+        "title": "V",
+        "artist_id": 14,
+        "year_release_album": "2014",
+        "year_release_plate": "2014",
+        "genres": [13, 16, 6],
+        "price": "3000",
+        "logo": "img/vinyl/maroon5_v.png"
+    },
+    {
+        "id": 15,
+        "title": "Ben",
+        "artist_id": 15,
+        "year_release_album": "1972",
+        "year_release_plate": "1972",
+        "genres": [13, 14],
+        "price": "30000",
+        "logo": "img/vinyl/michaeljackson_ben.png"
+    },
+    {
+        "id": 16,
+        "title": "Anti",
+        "artist_id": 16,
+        "year_release_album": "2016",
+        "year_release_plate": "2016",
+        "genres": [13, 14, 5],
+        "price": "2500",
+        "logo": "img/vinyl/rihanna_anti.png"
+    },
+    {
+        "id": 17,
+        "title": "The Thrill of It All",
+        "artist_id": 17,
+        "year_release_album": "2017",
+        "year_release_plate": "2019",
+        "genres": [17, 13],
+        "price": "2500",
+        "logo": "img/vinyl/samsmith_thethrillofitall.png"
+    },
+    {
+        "id": 18,
+        "title": "Animals",
+        "artist_id": 18,
+        "year_release_album": "1977",
+        "year_release_plate": "1977",
+        "genres": [16],
+        "price": "50000",
+        "logo": "img/vinyl/pinkfloyd_animals.png"
+    },
+    {
+        "id": 19,
+        "title": "Red",
+        "artist_id": 19,
+        "year_release_album": "2012",
+        "year_release_plate": "2015",
+        "genres": [13, 16],
+        "price": "50000",
+        "logo": "img/vinyl/taylorswift_red.png"
+    },
+    {
+        "id": 20,
+        "title": "Abbey Road",
+        "artist_id": 20,
+        "year_release_album": "1969",
+        "year_release_plate": "2018",
+        "genres": [16],
+        "price": "15000",
+        "logo": "img/vinyl/thebeatles_abbeyroad.png"
+    },
+    {
+        "id": 21,
+        "title": "Starboy",
+        "artist_id": 21,
+        "year_release_album": "2016",
+        "year_release_plate": "2020",
+        "genres": [14, 13],
+        "price": "2500",
+        "logo": "img/vinyl/theweeknd_starboy.png"
+    },
+    {
+        "id": 22,
+        "title": "Nevermind",
+        "artist_id": 22,
+        "year_release_album": "1991",
+        "year_release_plate": "1992",
+        "genres": [16, 24, 27],
+        "price": "1000",
+        "logo": "img/vinyl/nirvana_nevermind.png"
+    },
+    {
+        "id": 23,
+        "title": "Positions",
+        "artist_id": 23,
+        "year_release_album": "2020",
+        "year_release_plate": "2020",
+        "genres": [14, 13, 32],
+        "price": "5500",
+        "logo": "img/vinyl/arianagrande_positions.png"
+    },
+    {
+        "id": 24,
+        "title": "Happier Than Ever",
+        "artist_id": 24,
+        "year_release_album": "2021",
+        "year_release_plate": "2021",
+        "genres": [6, 10, 13],
+        "price": "1000",
+        "logo": "img/vinyl/billieeilish_happierthanever.png"
+    },
+    {
+        "id": 25,
+        "title": "Blue Moves",
+        "artist_id": 25,
+        "year_release_album": "1976",
+        "year_release_plate": "1990",
+        "genres": [16, 13],
+        "price": "9000",
+        "logo": "img/vinyl/eltonjohn_bluemoves.png"
+    },
+    {
+        "id": 26,
+        "title": "Endless Summer Vacation",
+        "artist_id": 26,
+        "year_release_album": "2023",
+        "year_release_plate": "2023",
+        "genres": [13, 5],
+        "price": "9000",
+        "logo": "img/vinyl/mileycyrus_endlesssummervacation.png"
+    },
+    {
+        "id": 27,
+        "title": "Stoney",
+        "artist_id": 27,
+        "year_release_album": "2016",
+        "year_release_plate": "2020",
+        "genres": [8],
+        "price": "2500",
+        "logo": "img/vinyl/postmalone_stoney.png"
+    },
+    {
+        "id": 28,
+        "title": "Jazz",
+        "artist_id": 28,
+        "year_release_album": "1978",
+        "year_release_plate": "1990",
+        "genres": [16, 28, 13],
+        "price": "50000",
+        "logo": "img/vinyl/queen_jazz.png"
+    },
+    {
+        "id": 29,
+        "title": "This Is Acting",
+        "artist_id": 29,
+        "year_release_album": "2016",
+        "year_release_plate": "2016",
+        "genres": [13],
+        "price": "10000",
+        "logo": "img/vinyl/sia_thisisacting.png"
+    },
+    {
+        "id": 30,
+        "title": "Iowa",
+        "artist_id": 30,
+        "year_release_album": "2001",
+        "year_release_plate": "2002",
+        "genres": [15],
+        "price": "15000",
+        "logo": "img/vinyl/slipknot_iowa.png"
+    },
+    {
+        "id": 31,
+        "title": "Immortalized",
+        "artist_id": 31,
+        "year_release_album": "2015",
+        "year_release_plate": "2017",
+        "genres": [15, 28, 27],
+        "price": "15000",
+        "logo": "img/vinyl/disturbed_immortalized.png"
+    }
+]
