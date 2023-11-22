@@ -16,6 +16,47 @@ $(document).ready(function () {
         }
     }
 
+    function setBasicCss() {
+        $('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        $('.nav_small_screen').css('height', `${$(window).height()}px`);
+        $('.basket').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+    }
+
+    function addErrorInput(errors) {
+        errors.forEach(error => {
+            $(`input[name=${error.attributeName}]`).addClass('error');
+            $(`.${error.attributeName}_error`).text(error.message);
+        });
+    }
+
+    function getGenreListHTML(genreList) {
+        let html = '';
+
+        genreList.forEach(genre => {
+            html += `<p data-genre-id="${genre.id}">
+                        ${genre.title.toUpperCase()}
+                    </p>`;
+        });
+
+        return html;
+    }
+
+    function getArtistListHTML(artistList) {
+        let html = '';
+
+        artistList.forEach(genre => {
+            html += `<p data-artist-id="${genre.id}">
+                        ${genre.title.toUpperCase()}
+                    </p>`;
+        });
+
+        return html;
+    }
+
+
     if (window.location.href.includes('logout')) {
         if (sessionStorage.getItem('login')) {
             sessionStorage.removeItem('login');
@@ -30,24 +71,11 @@ $(document).ready(function () {
         $('a.auth_user').removeClass('no-show');
     }
 
-    if ($(window).width() < 960) {
-        $('.nav_big_screen').addClass('no-show');
-        $('.menu_btn.main').removeClass('no-show');
-    } else {
-        $('.nav_big_screen').removeClass('no-show');
-        $('.menu_btn.main').addClass('no-show');
-    }
-
+    setBasicCss();
+    $('.card_img').css('height', `${$('.card').width()}px`);
+    $('.search_input_header').css('top', $('header').outerHeight(true));
+    
     $(window).on('resize', function () {
-        if ($(window).width() < 960) {
-            $('.nav_big_screen').addClass('no-show');
-            $('.menu_btn.main').removeClass('no-show');
-        } else {
-            $('.nav_big_screen').removeClass('no-show');
-            $('.menu_btn.main').addClass('no-show');
-            $('.nav_small_screen').addClass('no-show');
-        }
-
         if ($(window).width() > 820) {
             $('.basket_product_operation').css('width', `${$('.basket_section_operation_product').width()}px`);
             $('.basket_product_mobile').hide();
@@ -59,23 +87,8 @@ $(document).ready(function () {
             $('.basket_product_mobile').removeAttr('style');
         }
 
-        $('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-        $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-        $('.nav_small_screen').css('height', `${$(window).height()}px`);
-        $('.basket').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-        $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-        $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
+        setBasicCss();
     });
-
-    $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-    $('.card_img').css('height', `${$('.card').width()}px`);
-    $('.nav_small_screen').css('height', `${$(window).height()}px`);
-    $('.basket').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-    $('.login').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-    $('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-    $('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-    $('.search_input_header').css('top', $('header').outerHeight(true));
-
 
     if ($(window).width() > 820) {
         $('.basket_product_operation').css('width', `${$('.basket_section_operation_product').width()}px`);
@@ -86,13 +99,7 @@ $(document).ready(function () {
         $('.basket_product_mobile').removeAttr('style');
     }
 
-    $('.menu_btn.main').on('click', () => {
-        $('.menu_btn.main').addClass('no-show');
-        $('.nav_small_screen').slideToggle(300);
-    });
-
-    $('.menu_btn.second').on('click', () => {
-        $('.menu_btn.main').removeClass('no-show');
+    $('.menu_btn').on('click', () => {
         $('.nav_small_screen').slideToggle(300);
     });
 
@@ -299,7 +306,7 @@ $(document).ready(function () {
         let password = formValue.filter(value => { return value.indexOf('password') != -1 ? true : false })[0][1];
         let errors = [];
 
-        fetch('../database/user.json')
+        fetch('../database/users.json')
             .then(response => {
                 return response.json();
             })
@@ -349,7 +356,7 @@ $(document).ready(function () {
         let password_repeat = formValue.filter(value => { return value.indexOf('password_repeat') != -1 ? true : false })[0][1];
         let errors = [];
 
-        fetch('../database/user.json')
+        fetch('../database/users.json')
             .then(response => {
                 return response.json();
             })
@@ -406,31 +413,19 @@ $(document).ready(function () {
             $('.genre-list').html(getGenreListHTML(data));
         });
 
-    $('.products_filter_item_list > p').on('click', function (e) {
-        console.log('test');
+    fetch('../database/artists.json')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            $('.artist-list').html(getArtistListHTML(data));
+        });
+
+    $('.products_filter_item_list').on('click', 'p', function (e) {
         let value = $(this).text().trim();
         let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
         let dataAttributeValue = $(this).data(dataAttributeName);
 
         $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
     });
-
-    function addErrorInput(errors) {
-        errors.forEach(error => {
-            $(`input[name=${error.attributeName}]`).addClass('error');
-            $(`.${error.attributeName}_error`).text(error.message);
-        });
-    }
-
-    function getGenreListHTML(genreList) {
-        let html = '';
-
-        genreList.forEach(genre => {
-            html += `<p data-genre-id="${genre.id}">
-                        ${genre.title.toUpperCase()}
-                    </p>`;
-        });
-
-        return html;
-    }
 });
