@@ -23,12 +23,20 @@
     src: url("../font/Inter-Medium.ttf");
 }
 
+html {
+    box-sizing: border-box;
+    font-family: 'Inter SemiBold', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    border: none;
     color: white;
-    font-family: 'Inter SemiBold', sans-serif;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
 }
 
 a {
@@ -44,6 +52,7 @@ input {
     outline: none;
     color: black;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 input:hover {
@@ -59,4 +68,12 @@ input::placeholder {
     color: black;
     opacity: 1;
     font-size: 13px;
+}
+
+button {
+    font-family: inherit;
+}
+
+li {
+    list-style-type: none;
 }

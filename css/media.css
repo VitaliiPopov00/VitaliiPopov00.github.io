@@ -384,3 +384,13 @@
 
     /* PRODUCT START */
 }
+
+@media (max-width: 960px) {
+    .menu_btn {
+        display: block;
+    }
+
+    .nav_big_screen {
+        display: none;
+    }
+}
