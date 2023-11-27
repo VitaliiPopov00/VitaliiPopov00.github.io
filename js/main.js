@@ -1,21 +1,4 @@
 $(document).ready(function () {
-    function getUrlVars() {
-        let vars = {};
-        if (window.location.href.indexOf('?') != -1) {
-            let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-
-            for (let i = 0; i < hashes.length; i++) {
-                hash = hashes[i].split('=');
-                let hashName = hash[0];
-                vars[hashName] = hash[1];
-            }
-
-            return vars;
-        } else {
-            return false;
-        }
-    }
-
     function setBasicCss() {
         $('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
         $('.main_screen').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
@@ -31,31 +14,6 @@ $(document).ready(function () {
             $(`.${error.attributeName}_error`).text(error.message);
         });
     }
-
-    function getGenreListHTML(genreList) {
-        let html = '';
-
-        genreList.forEach(genre => {
-            html += `<p data-genre-id="${genre.id}">
-                        ${genre.title.toUpperCase()}
-                    </p>`;
-        });
-
-        return html;
-    }
-
-    function getArtistListHTML(artistList) {
-        let html = '';
-
-        artistList.forEach(genre => {
-            html += `<p data-artist-id="${genre.id}">
-                        ${genre.title.toUpperCase()}
-                    </p>`;
-        });
-
-        return html;
-    }
-
 
     if (window.location.href.includes('logout')) {
         if (sessionStorage.getItem('login')) {
@@ -106,16 +64,6 @@ $(document).ready(function () {
     $('.products_filter_item_list_input-price').on('input', function (e) {
         let value = Number($(this).val().replace(/[^0-9]/, ''));
         $(this).val(value.toLocaleString('ru-RU'));
-    });
-
-    $('.product_img').on('click', function () {
-        $(this).toggleClass('no-show');
-        $('.playlist').toggleClass('no-show');
-    });
-
-    $('.playlist').on('click', function () {
-        $(this).toggleClass('no-show');
-        $('.product_img').toggleClass('no-show');
     });
 
     $('.products_search').on('click', function (e) {
@@ -233,38 +181,6 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400);
     });
-
-    if (window.location.href.includes('products')) {
-        let attrs = getUrlVars();
-
-        if (attrs) {
-            if (attrs['artistId']) {
-                $('p[data-artist-id=""]').data('artistId', attrs['artistId']).text($(`p[data-artist-id=${attrs['artistId']}]`).text());
-            }
-
-            if (attrs['genreId']) {
-                $('p[data-genre-id=""]').data('genreId', attrs['genreId']).text($(`p[data-genre-id=${attrs['genreId']}]`).text());
-            }
-
-            if (attrs['start_price']) {
-                $('input[data-start-price]').val(attrs['start_price']);
-            }
-
-            if (attrs['end_price']) {
-                $('input[data-end-price]').val(attrs['end_price']);
-            }
-
-            if (attrs['title']) {
-                if (attrs['title'] == 'admin_test_test') {
-                    $('.filter_result').addClass('no-show');
-                    $('.filter_result.not-found').removeClass('no-show');
-                    $('.card_list').addClass('no-show');
-                } else {
-                    $('input[data-title]').val(attrs['title']);
-                }
-            }
-        }
-    }
 
     $(document).on('click', function (event) {
         if (!$('.search_input_header').hasClass('no-show') && !$(event.target).closest('.search_input_header').length) {
@@ -403,29 +319,5 @@ $(document).ready(function () {
                 }
             })
             .catch(addErrorInput);
-    });
-
-    fetch('../database/genres.json')
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            $('.genre-list').html(getGenreListHTML(data));
-        });
-
-    fetch('../database/artists.json')
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            $('.artist-list').html(getArtistListHTML(data));
-        });
-
-    $('.products_filter_item_list').on('click', 'p', function (e) {
-        let value = $(this).text().trim();
-        let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
-        let dataAttributeValue = $(this).data(dataAttributeName);
-
-        $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
     });
 });

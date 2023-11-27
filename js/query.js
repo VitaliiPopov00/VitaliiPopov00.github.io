@@ -4,7 +4,7 @@ if (!localStorage.getItem('albums_json')) {
             return response.json();
         })
         .then(data => {
-                localStorage.setItem('albums_json', JSON.stringify(data));
+            localStorage.setItem('albums_json', JSON.stringify(data));
         });
 }
 
@@ -14,7 +14,7 @@ if (!localStorage.getItem('artists_json')) {
             return response.json();
         })
         .then(data => {
-                localStorage.setItem('artists_json', JSON.stringify(data));
+            localStorage.setItem('artists_json', JSON.stringify(data));
         });
 }
 
@@ -24,7 +24,7 @@ if (!localStorage.getItem('genres_json')) {
             return response.json();
         })
         .then(data => {
-                localStorage.setItem('genres_json', JSON.stringify(data));
+            localStorage.setItem('genres_json', JSON.stringify(data));
         });
 }
 
@@ -34,7 +34,7 @@ if (!localStorage.getItem('order_statuses_json')) {
             return response.json();
         })
         .then(data => {
-                localStorage.setItem('order_statuses_json', JSON.stringify(data));
+            localStorage.setItem('order_statuses_json', JSON.stringify(data));
         });
 }
 
@@ -44,7 +44,7 @@ if (!localStorage.getItem('sales_json')) {
             return response.json();
         })
         .then(data => {
-                localStorage.setItem('sales_json', JSON.stringify(data));
+            localStorage.setItem('sales_json', JSON.stringify(data));
         });
 }
 
