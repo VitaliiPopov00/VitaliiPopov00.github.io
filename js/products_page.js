@@ -55,10 +55,12 @@ $('.products_filter_item_list').on('click', 'p', function (e) {
 
 let attrs = getUrlVars();
 let resultSearch = [];
+let isFilterExists = false;
 
 if (attrs) {
     if (attrs['artistId']) {
-        if (!resultSearch.length) {
+        if (!resultSearch.length && !isFilterExists) {
+            isFilterExists = true;
             resultSearch = [...albums.filter(album => album.artist_id == attrs['artistId'])];
         } else {
             resultSearch = resultSearch.filter(album => album.artist_id == attrs['artistId']);
@@ -67,8 +69,9 @@ if (attrs) {
     }
 
     if (attrs['genreId']) {
-        if (!resultSearch.length) {
-            resultSearch = [...albums.filter(album => album.genres.indexOf(attrs['genreId']) !== -1)];
+        if (!resultSearch.length && !isFilterExists) {
+            isFilterExists = true;
+            resultSearch = [...albums.filter(album => album.genres.indexOf(Number(attrs['genreId'])) !== -1)];
         } else {
             resultSearch = resultSearch.filter(album => album.genres.indexOf(Number(attrs['genreId'])) !== -1);
         }
@@ -76,7 +79,8 @@ if (attrs) {
     }
 
     if (attrs['start_price']) {
-        if (!resultSearch.length) {
+        if (!resultSearch.length && !isFilterExists) {
+            isFilterExists = true;
             resultSearch = [...albums.filter(album => album.price > (Number(attrs['start_price']) - 1))];
         } else {
             resultSearch = resultSearch.filter(album => album.price > (Number(attrs['start_price']) - 1));
@@ -85,7 +89,8 @@ if (attrs) {
     }
 
     if (attrs['end_price']) {
-        if (!resultSearch.length) {
+        if (!resultSearch.length && !isFilterExists) {
+            isFilterExists = true;
             resultSearch = [...albums.filter(album => album.price < (Number(attrs['end_price']) + 1))];
         } else {
             resultSearch = resultSearch.filter(album => album.price < (Number(attrs['end_price']) + 1));
@@ -94,7 +99,8 @@ if (attrs) {
     }
 
     if (attrs['title']) {
-        if (!resultSearch.length) {
+        if (!resultSearch.length && !isFilterExists) {
+            isFilterExists = true;
             resultSearch = [...albums.filter(album => album.title.toLowerCase().includes((attrs['title']).toLowerCase()))];
         } else {
             resultSearch = resultSearch.filter(album => album.title.toLowerCase().includes((attrs['title']).toLowerCase()));
