@@ -166,38 +166,40 @@ header {
     flex-direction: column;
     margin-top: 10px;
     background-color: white;
+    max-height: 450px;
+    overflow: auto;
 }
 
-.search_list_result > li {
+.search_list_result > a {
     padding: 5px 0px 5px 5px;
     font-size: 13px;
 }
 
-.search_list_result > li[data-is-artist] {
+.search_list_result > a[data-is-artist] {
     padding: 20px 0px 20px 20px;
     font-size: 13px;
 }
 
-.search_list_result > li[data-is-artist] p {
+.search_list_result > a[data-is-artist] p {
     color: black;
 }
 
-.search_list_result > li > a {
+.search_list_result > a > li {
     display: flex;
     gap: 20px;
 }
 
-.search_list_result > li > a > img {
+.search_list_result > a > li > img {
     width: 50px;
     height: 50px;
 }
 
-.search_list_result > li > a > div > p {
+.search_list_result > a > li > div > p {
     color: black;
     margin-bottom: 5px;
 }
 
-.search_list_result li:hover {
+.search_list_result a:hover {
     background-color: #ccc;
 }
 
@@ -438,8 +440,7 @@ main.main {
 }
 
 .product_buy:hover {
-    background-color: black;
-    color: white;
+    background-color: #ccc;
 }
 
 .product_count {
