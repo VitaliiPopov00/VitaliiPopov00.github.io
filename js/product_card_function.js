@@ -1,5 +1,4 @@
-import { artists } from './query.js';
-import { genres } from './query.js';
+import { artists, genres } from './query.js';
 
 export function getCardHTML(card) {
     return `<li class="card" data-product-id="${card.id}">
@@ -80,4 +79,72 @@ export function getCardPageHTML(card) {
     </div>`;
 
     return result;
+}
+
+export function getSearchItemHTML(item, isAlbum) {
+    let result = `<a href="${isAlbum ? "product" : "products"}.html?${isAlbum ? "id" : "artistId"}=${item.id}" ${isAlbum ? "data-is-album" : "data-is-artist"}>
+                    <li>`;
+    
+    if (isAlbum) {
+        result += `<img src="/${item.logo}" alt="${item.title}">
+                    <div>
+                        <p>${artists.find(artist => artist.id == item.artist_id).title.toUpperCase()}</p>
+                        <p>${item.title.toUpperCase()}</p>
+                    </div>`;
+    } else {
+        result += `<p>${item.title.toUpperCase()}</p>`
+    }
+                    
+    result += `</li>
+            </a>`;
+
+    return result;
+}
+
+export function addErrorInput(errors) {
+    errors.forEach(error => {
+        $(`input[name=${error.attributeName}]`).addClass('error');
+        $(`.${error.attributeName}_error`).text(error.message);
+    });
+}
+
+export function getUrlVars() {
+    let vars = {};
+    if (window.location.href.indexOf('?') != -1) {
+        let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        for (let i = 0; i < hashes.length; i++) {
+            let hash = hashes[i].split('=');
+            let hashName = hash[0];
+            vars[hashName] = hash[1];
+        }
+
+        return vars;
+    } else {
+        return false;
+    }
+}
+
+export function getGenreListHTML(genreList) {
+    let html = '';
+
+    genreList.forEach(genre => {
+        html += `<p data-genre-id="${genre.id}">
+                    ${genre.title.toUpperCase()}
+                </p>`;
+    });
+
+    return html;
+}
+
+export function getArtistListHTML(artistList) {
+    let html = '';
+
+    artistList.forEach(genre => {
+        html += `<p data-artist-id="${genre.id}">
+                    ${genre.title.toUpperCase()}
+                </p>`;
+    });
+
+    return html;
 }

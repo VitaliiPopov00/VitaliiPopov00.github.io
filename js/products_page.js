@@ -1,57 +1,9 @@
 import { artists, genres, albums } from './query.js';
-import { getCardListHTML } from './product_card_function.js';
+import { getCardListHTML, getGenreListHTML, getUrlVars, getArtistListHTML } from './product_card_function.js';
 
-function getUrlVars() {
-    let vars = {};
-    if (window.location.href.indexOf('?') != -1) {
-        let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-
-        for (let i = 0; i < hashes.length; i++) {
-            let hash = hashes[i].split('=');
-            let hashName = hash[0];
-            vars[hashName] = hash[1];
-        }
-
-        return vars;
-    } else {
-        return false;
-    }
-}
-
-function getGenreListHTML(genreList) {
-    let html = '';
-
-    genreList.forEach(genre => {
-        html += `<p data-genre-id="${genre.id}">
-                    ${genre.title.toUpperCase()}
-                </p>`;
-    });
-
-    return html;
-}
-
-function getArtistListHTML(artistList) {
-    let html = '';
-
-    artistList.forEach(genre => {
-        html += `<p data-artist-id="${genre.id}">
-                    ${genre.title.toUpperCase()}
-                </p>`;
-    });
-
-    return html;
-}
-
+$('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
 $('.products_filter_item_list.artist-list').html(getArtistListHTML(artists));
 $('.products_filter_item_list.genre-list').html(getGenreListHTML(genres));
-
-$('.products_filter_item_list').on('click', 'p', function (e) {
-    let value = $(this).text().trim();
-    let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
-    let dataAttributeValue = $(this).data(dataAttributeName);
-
-    $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
-});
 
 let attrs = getUrlVars();
 let resultSearch = [];
@@ -120,3 +72,47 @@ if (resultSearch.length) {
 } else if (!attrs) {
     $('.products_page').append(getCardListHTML(albums));
 }
+
+$('.products_filter_item_list').on('click', 'p', function (e) {
+    let value = $(this).text().trim();
+    let dataAttributeName = $(this).data('genreId') ? 'genreId' : 'artistId';
+    let dataAttributeValue = $(this).data(dataAttributeName);
+
+    $(this).closest('.products_filter_item').find('.products_filter_item_button > p').html(value).data(dataAttributeName, dataAttributeValue);
+});
+
+$('.products_filter_item_list_input-price').on('input', function (e) {
+    let value = Number($(this).val().replace(/[^0-9]/, ''));
+    $(this).val(value.toLocaleString('ru-RU'));
+});
+
+$('.products_search').on('click', function (e) {
+    e.preventDefault();
+    let filters = $(this).closest('.products_filter').children('[data_filter_list]');
+    let params = '';
+    let url = window.location.href;
+    let startPrice = Number($('.filter_price_start').val().replace(/\s/g, ''));
+    let endPrice = Number($('.filter_price_end').val().replace(/\s/g, ''));
+    let filterSearch = $('.products_filter_item_search_input').val().trim();
+    startPrice = startPrice ? `start_price=${startPrice}&` : '';
+    endPrice = endPrice ? `end_price=${endPrice}&` : '';
+    filterSearch = filterSearch ? `title=${filterSearch}&` : '';
+
+    params += startPrice + endPrice + filterSearch;
+
+    if (url.indexOf('?') !== -1) {
+        url = url.slice(0, url.indexOf('?'));
+    }
+
+    filters.each((index, el) => {
+        let filter = Object.entries($(el).find('button > p').data())[0];
+        if (filter[1]) {
+            params += filter.join('=') + '&';
+        }
+    });
+
+    if (params) {
+        window.location.href = url + '?' + params.slice(0, -1);
+    }
+
+});
