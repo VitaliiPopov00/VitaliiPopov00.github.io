@@ -171,12 +171,12 @@ header {
 }
 
 .search_list_result > a {
-    padding: 5px 0px 5px 5px;
+    padding: 5px;
     font-size: 13px;
 }
 
 .search_list_result > a[data-is-artist] {
-    padding: 20px 0px 20px 20px;
+    padding: 10px;
     font-size: 13px;
 }
 
@@ -669,19 +669,18 @@ main.main {
 
 .basket_section_operation_product {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 500px;
 }
 
-.basket_section_operation_product > .basket_title_section {
-    margin-left: 150px;
-}
-
-.basket_section_operation_product > .basket_title_section:first-child {
-    margin-left: 0px;
+.basket_product_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 13px;
 }
 
 .basket_product {
-    margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
 }
@@ -709,6 +708,7 @@ main.main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 500px;
 }
 
 .basket_product_operation_menu {
