@@ -48,6 +48,10 @@ if (!localStorage.getItem('sales_json')) {
         });
 }
 
+if (!localStorage.getItem('basketProducts')) {
+    localStorage.setItem('basketProducts', '[]');
+}
+
 export let albums = JSON.parse(localStorage.getItem('albums_json'));
 export let artists = JSON.parse(localStorage.getItem('artists_json'));
 export let genres = JSON.parse(localStorage.getItem('genres_json'));

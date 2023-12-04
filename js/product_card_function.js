@@ -1,6 +1,9 @@
 import { artists, genres } from './query.js';
 
 export function getCardHTML(card) {
+    let basket = JSON.parse(localStorage.getItem('basketProducts'));
+    let currentProduct = basket.find(product => product.productID == card.id) || false;
+
     return `<li class="card" data-product-id="${card.id}">
                 <div class="card_img">
                     <a href="product.html?id=${card.id}&"><img src="${card.logo}" alt="${card.title}"></a>
@@ -14,10 +17,10 @@ export function getCardHTML(card) {
                         ${(Number(card.price)).toLocaleString('ru-RU')}
                     </p>
                     <div class="card_operation">
-                        <a href="#" class="card_button">КУПИТЬ</a>
-                        <div class="quantity_operation no-show">
+                        <a href="#" class="card_button${currentProduct ? ' basket_card' : ''}">${currentProduct ? 'В КОРЗИНЕ' : 'КУПИТЬ'}</a>
+                        <div class="quantity_operation${currentProduct ? '' : ' no-show'}">
                             <a href="#" class="minus">-</a>
-                            <p class="number">1</p>
+                            <p class="number">${currentProduct ? currentProduct.count : '1'}</p>
                             <a href="#" class="plus">+</a>
                         </div>
                     </div>
@@ -38,6 +41,8 @@ export function getCardListHTML(cards) {
 }
 
 export function getCardPageHTML(card) {
+    let basket = JSON.parse(localStorage.getItem('basketProducts'));
+    let currentProduct = basket.find(product => product.productID == card.id) || false;
     let result =  `<div class="product" data-product-id="${card.id}">
                         <div class="product_first">
                             <img src="${card.logo}" alt="${card.title}" class="product_img">
@@ -68,10 +73,10 @@ export function getCardPageHTML(card) {
                 </p>
             </div>
             <div class="product_operation">
-                <a href="#" class="product_buy">КУПИТЬ</a>
-                <div class="product_count no-show">
+                <a href="#" class="product_buy${currentProduct ? ' basket_card' : ''}">${currentProduct ? 'В КОРЗИНЕ' : 'КУПИТЬ'}</a>
+                <div class="product_count${currentProduct ? '' : ' no-show'}">
                     <a href="#" class="minus">-</a>
-                    <a class="number">1</a>
+                    <a class="number">${currentProduct ? currentProduct.count : '1'}</a>
                     <a href="#" class="plus">+</a>
                 </div>
             </div>
@@ -88,11 +93,14 @@ export function getSearchItemHTML(item, isAlbum) {
     if (isAlbum) {
         result += `<img src="/${item.logo}" alt="${item.title}">
                     <div>
+                        <p style="color: #727272; font-size: 12px">${item.title.toUpperCase()}</p>
                         <p>${artists.find(artist => artist.id == item.artist_id).title.toUpperCase()}</p>
-                        <p>${item.title.toUpperCase()}</p>
                     </div>`;
     } else {
-        result += `<p>${item.title.toUpperCase()}</p>`
+        result += `<div>
+                        <p style="color: #727272; font-size: 12px">АРТИСТ / ГРУППА</p>
+                        <p>${item.title.toUpperCase()}</p>
+                    </div>`
     }
                     
     result += `</li>
@@ -106,6 +114,31 @@ export function addErrorInput(errors) {
         $(`input[name=${error.attributeName}]`).addClass('error');
         $(`.${error.attributeName}_error`).text(error.message);
     });
+}
+
+export function getBasketCard(card) {
+    let basket = JSON.parse(localStorage.getItem('basketProducts'));
+    let currentProductInBasket = basket.find(product => product.productID == card.id);
+
+    return `<div class="basket_product" data-product-id="${card.id}">
+                <a href="product.html?id=${card.id}" class="basket_product_info">
+                    <img src="${card.logo}" alt="${card.title}" class="basket_product_img">
+                    <p class="basket_product_name">
+                        ${card.title.toUpperCase()}
+                        <br>
+                        ${artists.find(artist => artist.id == card.artist_id).title.toUpperCase()}
+                    </p>
+                </a>
+                <div class="basket_product_operation">
+                    <p class="product_basket_price">${(Number(card.price)).toLocaleString('ru-RU')} ₽</p>
+                    <div class="basket_product_operation_menu">
+                        <a href="#" class="minus">-</a>
+                        <a class="number">${basket.find(product => product.productID == card.id).count}</a>
+                        <a href="#" class="plus">+</a>
+                    </div>
+                    <p class="basket_product_all_price">${(Number(currentProductInBasket.count) * Number(card.price)).toLocaleString('ru-RU')} ₽</p>
+                </div>
+            </div>`;
 }
 
 export function getUrlVars() {
