@@ -7,6 +7,7 @@ function setHTML() {
     let basket = JSON.parse(localStorage.getItem('basketProducts'));
     let products = [];
     let allPriceBasket = 0;
+    let HTML = "";
 
     basket.forEach(product => {
         albums.forEach(album => {
@@ -18,18 +19,20 @@ function setHTML() {
     });
     
     if (products.length) {
-        let HTML = "";
-
         products.forEach(product => {
             HTML += getBasketCard(product);
         });
 
-        $('.basket_product_list').html(HTML);
-        $('.basket_all_price').html(allPriceBasket.toLocaleString('ru-RU') + ' ₽')
+        $('.basket_is_empty').addClass('no-show');
+        $('.basket_is_not_empty').removeClass('no-show');
     } else {
         $('.basket_info').hide();
-        $('.filter_result').show();
+        $('.basket_is_not_empty').addClass('no-show');
+        $('.basket_is_empty').removeClass('no-show');
     }
+    
+    $('.basket_product_list').html(HTML);
+    $('.basket_all_price').html(allPriceBasket.toLocaleString('ru-RU') + ' ₽')
 }
 
 setHTML();

@@ -39,67 +39,37 @@
         </div>
     </header>
 
-    <main class="container products_page opacity">
-        <h3 class="products_page_title">
-            ТОВАРЫ
+    <main class="container profile opacity">
+        <h3 class="profile_title">
+            ПРОФИЛЬ
         </h3>
-        <span class="products_page_span"></span>
-        <div class="products_filter">
-            <div class="products_filter_item" data_filter_list="1">
-                <button class="products_filter_item_button">
-                    <p data-artist-id>
-                        ИСПОЛНИТЕЛИ
-                    </p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                        width="24">
-                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                    </svg>
-                </button>
-                <div class="products_filter_item_list artist-list">
-                </div>
-            </div>
-            <div class="products_filter_item" data_filter_list="1">
-                <button class="products_filter_item_button">
-                    <p data-genre-id>
-                        ЖАНР
-                    </p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                    </svg>
-                </button>
-                <div class="products_filter_item_list genre-list">
-                </div>
-            </div>
-            <div class="products_filter_item">
-                <button class="products_filter_item_button">
-                    <p>
-                        ЦЕНА
-                    </p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                    </svg>
-                </button>
-                <div class="products_filter_item_list filter_price">
-                    <input type="text" class="products_filter_item_list_input-price filter_price_start" placeholder="от 1" data-start-price="">
-                    <input type="text" class="products_filter_item_list_input-price filter_price_end"
-                        placeholder="до чего душа позволяет" data-end-price="">
-                </div>
-            </div>
-            <div class="products_filter_item filter_search">
-                <input type="text" class="products_filter_item_search_input" placeholder="ПОИСК ПО НАЗВАНИЮ" data-title="">
-
-                <a href="#" class="products_search">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="40" viewBox="0 -960 960 960" width="24">
-                        <path
-                            d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <h3 class="filter_result">РЕУЗЛЬТАТЫ ПОИСКА</h3>
-        <h3 class="filter_result no-show not-found">НИЧЕГО НЕ НАЙДЕНО :(</h3>
-        
-        <!-- CARD LIST -->
+        <p class="profile_info">
+            VPOPOV • VITALIK@GMAIL.COM
+        </p>
+        <a href="logout.html" class="profile_btn">
+            ВЫЙТИ
+        </a>
+        <h3 class="profile_orders_title">
+            ВАШИ ЗАКАЗЫ
+        </h3>
+        <ul class="profile_orders_list">
+            <li class="profile_orders_item">
+                <p class="orders_item_title">
+                    # 128
+                </p>
+                <p class="orders_item_date">
+                    2023-11-10 15:43:00
+                </p>
+                <p class="orders_item_title_order-list">
+                    СОДЕРЖАНИЕ ЗАКАЗА
+                </p>
+                <ul class="profile_orders_item_order-list">
+                    <li class="order-list_item">
+                        
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </main>
 
     <footer class="footer container opacity">
@@ -192,7 +162,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- ПОИСКОВОЕ ПОЛЕ -->
     <div class="search_input_header no-show">
         <form action="products.html" class="form_search_header" method="get">
@@ -207,8 +177,9 @@
         <ul class="search_list_result no-show">
         </ul>
     </div>
+
     <script src="js/jquery-3.7.1.js"></script>
-    <script type="module" src="js/products_page.js"></script>
+    <script type="module" src="js/basket_page.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/loader.js"></script>
 </body>

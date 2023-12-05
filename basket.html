@@ -40,29 +40,36 @@
     </header>
 
     <main class="container basket opacity">
-        <h3 class="basket_title">
-            КОРЗИНА
-        </h3>
-        <span class="basket_span"></span>
-        <div class="basket_title_section_product">
-            <p class="basket_title_section">ТОВАР</p>
-            <div class="basket_section_operation_product">
-                <p class="basket_title_section">СТОИМОСТЬ</p>
-                <p class="basket_title_section">КОЛ-ВО</p>
-                <p class="basket_title_section">ИТОГО</p>
+        <section class="basket_is_not_empty no-show">
+            <h3 class="basket_title">
+                КОРЗИНА
+            </h3>
+            <span class="basket_span"></span>
+            <div class="basket_title_section_product">
+                <p class="basket_title_section">ТОВАР</p>
+                <div class="basket_section_operation_product">
+                    <p class="basket_title_section">СТОИМОСТЬ</p>
+                    <p class="basket_title_section">КОЛ-ВО</p>
+                    <p class="basket_title_section">ИТОГО</p>
+                </div>
             </div>
-        </div>
-        <span class="basket_span before_product"></span>
-        <div class="basket_product_list">
-            <!-- CARD LIST -->
-            <h3 class="filter_result no-show not-found" style="margin: 15px 0px;">КОРЗИНА ПУСТА :(</h3>
-        </div>
-        <span class="basket_span"></span>
-        <div class="basket_info">
-            <p>ИТОГО</p>
-            <p class="basket_all_price"></p>
-            <a href="#" class="basket_button">ПЕРЕЙТИ К ОФОРМЛЕНИЮ</a>
-        </div>
+            <span class="basket_span before_product"></span>
+            <div class="basket_product_list">
+                <!-- CARD LIST -->
+            </div>
+            <span class="basket_span"></span>
+            <div class="basket_info">
+                <p>ИТОГО</p>
+                <p class="basket_all_price"></p>
+                <a href="#" class="basket_button">ПЕРЕЙТИ К ОФОРМЛЕНИЮ</a>
+            </div>
+        </section>
+        <section class="basket_is_empty no-show">
+            <img src="./img/site/basket_empty.svg" class="basket_is_empty_img not-found" alt="В КОРЗИНЕ НИЧЕГО НЕТ :(">
+            <a href="products.html" class="basket_btn_redirect">
+                ПЕРЕЙТИ В КАТАЛОГ
+            </a>
+        </section>
     </main>
 
     <footer class="footer container opacity">

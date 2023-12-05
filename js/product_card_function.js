@@ -123,11 +123,10 @@ export function getBasketCard(card) {
     return `<div class="basket_product" data-product-id="${card.id}">
                 <a href="product.html?id=${card.id}" class="basket_product_info">
                     <img src="${card.logo}" alt="${card.title}" class="basket_product_img">
-                    <p class="basket_product_name">
-                        ${card.title.toUpperCase()}
-                        <br>
-                        ${artists.find(artist => artist.id == card.artist_id).title.toUpperCase()}
-                    </p>
+                    <div class="basket_product_name">
+                        <p>${card.title.toUpperCase()}</p>
+                        <p>${artists.find(artist => artist.id == card.artist_id).title.toUpperCase()}</p>
+                    </div>
                 </a>
                 <div class="basket_product_operation">
                     <p class="product_basket_price">${(Number(card.price)).toLocaleString('ru-RU')} ₽</p>

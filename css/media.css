@@ -72,6 +72,10 @@
         margin-right: 0;
     }
 
+    .basket_btn_redirect {
+        margin-top: 25px;
+    }
+
     /* BASKET PAGE END */
 
 
@@ -171,6 +175,10 @@
     /* BASKET PAGE START */
     .basket_title {
         font-size: 32px;
+    }
+
+    .basket_btn_redirect {
+        margin-top: 40px;
     }
 
     /* BASKET PAGE END */

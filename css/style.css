@@ -702,6 +702,13 @@ main.main {
 
 .basket_product_name {
     margin-left: 15px;
+    height: 100%;
+}
+
+.basket_product_name > p:first-child {
+    color: #727272;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .basket_product_operation {
@@ -754,8 +761,96 @@ main.main {
     color: white;
 }
 
+.basket_is_empty {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.basket_is_empty_img {
+    height: 50px;
+}
+
+.basket_btn_redirect {
+    display: block;
+    margin-top: 50px;
+    margin-inline: auto;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    transition: .2s;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.basket_btn_redirect:hover {
+    background-color: #ccc;
+}
 
 /* MAIN BASKET END */
+
+
+
+/* MAIN PROFILE START */
+.profile_title {
+    margin-top: 50px;
+    font-size: 40px;
+    font-family: 'Prosto one';
+    border-bottom: 2px solid #FFF;
+    margin-bottom: 25px;
+}
+
+.profile_info {
+    margin-bottom: 25px;
+}
+
+.profile_btn {
+    display: block;
+    width: fit-content;
+    padding: 10px 30px;
+    background: white;
+    color: black;
+    transition: .2s;
+    margin-bottom: 50px;
+}
+
+.profile_btn:hover {
+    background: #CCC;
+}
+
+.profile_orders_title {
+    font-size: 32px;
+    font-family: 'Prosto one';
+    margin-bottom: 25px;
+}
+
+.profile_orders_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile_orders_item {
+    width: 300px;
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.orders_item_title {
+    color: black;
+    font-size: 23px;
+}
+
+.orders_item_date {
+    color: #757575;
+    margin-bottom: 15px;
+}
+
+.orders_item_title_order-list {
+    color: black;
+}
+/* MAIN PROFILE END */
+
 
 
 /* MAIN PRODUCTS START */
@@ -937,10 +1032,6 @@ footer {
 
 /* ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ */
 
-.no-show {
-    display: none;
-}
-
 .blur {
     filter: blur(5px);
     pointer-events: none;
@@ -956,7 +1047,16 @@ footer {
 
 .loader {
     position: fixed;
-    top: 50%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > svg {
     animation: spin .5s linear 0s infinite;
 }
 
@@ -1021,8 +1121,6 @@ footer {
 }
 /* 404 PAGE END */
 
-.special_misha {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
+.no-show {
+    display: none;
 }
