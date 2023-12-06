@@ -4,6 +4,11 @@ import { getCardPageHTML, getUrlVars } from './product_card_function.js';
 let productID = (getUrlVars()).id;
 let product = albums.find(album => album.id == productID);
 
+if (!product) {
+    window.location = '404.html';
+}
+
+
 $('main').html(getCardPageHTML(product));
 
 $('.product_buy').on('click', function (e) {

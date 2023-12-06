@@ -6,15 +6,6 @@ $(document).ready(function () {
         $('.nav_small_screen').css('height', `${$(window).height()}px`);
     }
 
-    if (window.location.href.includes('logout')) {
-        if (sessionStorage.getItem('login')) {
-            sessionStorage.removeItem('login');
-            window.location = 'index.html';
-        } else {
-            window.location = '403.html';
-        }
-    }
-
     if (sessionStorage.getItem('login')) {
         $('a.no_auth_user').addClass('no-show');
         $('a.auth_user').removeClass('no-show');

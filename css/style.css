@@ -236,7 +236,7 @@ main.main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .main_logo {
@@ -827,11 +827,12 @@ main.main {
 .profile_orders_list {
     display: flex;
     flex-wrap: wrap;
+    gap: 50px;
     justify-content: space-between;
 }
 
 .profile_orders_item {
-    width: 300px;
+    width: 250px;
     background-color: white;
     padding: 10px 15px;
 }
@@ -843,12 +844,53 @@ main.main {
 
 .orders_item_date {
     color: #757575;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .orders_item_title_order-list {
     color: black;
+    margin-bottom: 10px;
 }
+
+.profile_orders_item_order-list {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    min-height: 200px;
+    margin-bottom: 18px;
+}
+
+.order-list_item_product_link {
+    display: flex;
+    gap: 10px;
+}
+
+.order-list_item_product_link img {
+    width: 50px;
+}
+
+.order-list_item_artist_name {
+    color: black;
+}
+
+.order-list_item_album_name {
+    color: #757575;
+    font-size: 13px;
+}
+
+.order-list_item_more {
+    color: black;
+}
+
+.orders_item_status-order span {
+    color: #757575;
+    font-size: 13px;
+}
+.orders_item_status-order p {
+    color: black;
+}
+
+
 /* MAIN PROFILE END */
 
 
@@ -1072,36 +1114,26 @@ footer {
 
 
 
-/* 404 PAGE START*/
+/* ERROR PAGE START*/
 .error_page {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.error_image {
-    width: 100%;
-    height: 100vh;
-    background: url('../img/site/404.gif') no-repeat;
-    background-size: cover;
-    opacity: .3;
-    max-width: 5000px;
-    margin: 0 auto;
+.error_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error_code {
     color: white;
     font-family: 'Prosto one';
     font-size: 150px;
-}
-
-.error_info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0px 0px 30px 0px;
 }
 
 .error_message {
@@ -1119,7 +1151,7 @@ footer {
 .error_home_link:hover {
     background-color: #ccc;
 }
-/* 404 PAGE END */
+/* ERROR PAGE END */
 
 .no-show {
     display: none;

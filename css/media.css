@@ -93,6 +93,19 @@
 
 
 
+    /* PROFILE PAGE START */
+    .profile_title {
+        font-size: 28px;
+    }
+
+    .profile_orders_title {
+        font-size: 21px;
+    }
+
+    /* PROFILE PAGE END */
+
+
+
     /* SEARCH INPUT START */
     .search_input_header {
         width: calc(100% - 40px);
@@ -107,6 +120,15 @@
     }
 
     /* INPUT ERROR END */
+
+
+
+    /* ERROR PAGE START */
+    .error_code {
+        font-size: 90px;
+    }
+
+    /* ERROR PAGE END */
 }
 
 
@@ -196,6 +218,19 @@
 
 
 
+    /* PROFILE PAGE START */
+    .profile_title {
+        font-size: 32px;
+    }
+
+    .profile_orders_title {
+        font-size: 25px;
+    }
+
+    /* PROFILE PAGE END */
+
+
+
     /* SEARCH INPUT START */
     .search_input_header {
         width: calc(100% - 100px);
@@ -211,6 +246,14 @@
     }
 
     /* INPUT ERROR END */
+
+
+    /* ERROR PAGE START */
+    .error_code {
+        font-size: 100px;
+    }
+
+    /* ERROR PAGE END */
 }
 
 
@@ -291,6 +334,8 @@
 
     /* BASKET PAGE END */
 
+
+
     /* PRODUCTS PAGE START */
     .products_page_title {
         font-size: 36px;
@@ -301,6 +346,19 @@
     }
 
     /* PRODUCTS PAGE END */
+
+
+
+    /* PROFILE PAGE START */
+    .profile_title {
+        font-size: 36px;
+    }
+
+    .profile_orders_title {
+        font-size: 29px;
+    }
+
+    /* PROFILE PAGE END */
 
 
 
@@ -319,6 +377,15 @@
     }
 
     /* INPUT ERROR END */
+
+
+
+    /* ERROR PAGE START */
+    .error_code {
+        font-size: 125px;
+    }
+
+    /* ERROR PAGE END */
 }
 
 
@@ -409,5 +476,11 @@
 
     .nav_big_screen {
         display: none;
+    }
+}
+
+@media (max-width: 611px) {
+    .profile_orders_list {
+        justify-content: center;
     }
 }

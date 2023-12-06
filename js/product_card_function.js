@@ -1,4 +1,4 @@
-import { artists, genres } from './query.js';
+import { albums, artists, genres, order_statuses } from './query.js';
 
 export function getCardHTML(card) {
     let basket = JSON.parse(localStorage.getItem('basketProducts'));
@@ -179,4 +179,39 @@ export function getArtistListHTML(artistList) {
     });
 
     return html;
+}
+
+export function getOrderCard(order) {
+    let result =  `<li class="profile_orders_item" data-order-id=${order.id}>
+                        <p class="orders_item_title">
+                            # ${order.id}
+                        </p>
+                        <p class="orders_item_date">
+                            ${order.date}
+                        </p>
+                        <p class="orders_item_title_order-list">
+                            СОДЕРЖАНИЕ ЗАКАЗА
+                        </p>
+                        <ul class="profile_orders_item_order-list">`;
+
+    order.order_list.forEach(product => {
+        let productItem = albums.find(album => album.id == product);
+        result += `<li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=${productItem.id}">
+                            <img src="./img/vinyl/${productItem.logo}" alt="${productItem.title}">
+                            <div>
+                                <p class="order-list_item_album_name">${productItem.title}</p>
+                                <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id)}</p>
+                            </div>
+                        </a>
+                    </li>`;
+    });
+
+                    
+    result += `</ul>
+                <div class="orders_item_status-order">
+                    <span>СТАТУС</span>
+                    <p>${order_statuses.find(status => status.id == order.status_id).title}</p>
+                </div>
+            </li>`;
 }

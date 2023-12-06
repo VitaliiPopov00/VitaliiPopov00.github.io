@@ -28,11 +28,13 @@
         </div>
 
         <div class="nav nav_big_screen">
-            <a href="login.html">ВОЙТИ</a>
-            <a href="register.html">РЕГИСТРАЦИЯ</a>
+            <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+            <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+            <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+            <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
         </div>
 
-        <div class="menu_btn main no-show">
+        <div class="menu_btn main">
             <span></span>
             <span></span>
             <span></span>
@@ -161,7 +163,7 @@
     </div>
 
     <!-- МЕНЮ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ -->
-    <div class="nav_small_screen no-show">
+    <section class="nav_small_screen no-show">
         <div class="header_small_screen container">
             <div class="small_screen_top">
                 <a href="index.html"><svg width="100" viewBox="0 0 675 312" fill="none"
@@ -187,11 +189,13 @@
             </div>
 
             <div class="small_screen_footer">
-                <a href="login.html">ВОЙТИ</a>
-                <a href="register.html">РЕГИСТРАЦИЯ</a>
+                <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+                <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+                <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+                <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ПОИСКОВОЕ ПОЛЕ -->
     <div class="search_input_header no-show">

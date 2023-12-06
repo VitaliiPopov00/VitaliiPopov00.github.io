@@ -28,11 +28,13 @@
         </div>
 
         <div class="nav nav_big_screen">
-            <a href="login.html">ВОЙТИ</a>
-            <a href="register.html">РЕГИСТРАЦИЯ</a>
+            <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+            <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+            <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+            <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
         </div>
 
-        <div class="menu_btn main no-show">
+        <div class="menu_btn main">
             <span></span>
             <span></span>
             <span></span>
@@ -65,10 +67,136 @@
                 </p>
                 <ul class="profile_orders_item_order-list">
                     <li class="order-list_item">
-                        
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/adele_30.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">30</p>
+                                <p class="order-list_item_artist_name">ADELE</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/disturbed_immortalized.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">IMMORTALIZED</p>
+                                <p class="order-list_item_artist_name">DISTURBED</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/eminem_kamikaze.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">KAMIKAZE</p>
+                                <p class="order-list_item_artist_name">EMINEM</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item order-list_item_more">
+                        +4
                     </li>
                 </ul>
+                <div class="orders_item_status-order">
+                    <span>СТАТУС</span>
+                    <p>ПРИНЯТ В РАБОТУ</p>
+                </div>
             </li>
+            <li class="profile_orders_item">
+                <p class="orders_item_title">
+                    # 128
+                </p>
+                <p class="orders_item_date">
+                    2023-11-10 15:43:00
+                </p>
+                <p class="orders_item_title_order-list">
+                    СОДЕРЖАНИЕ ЗАКАЗА
+                </p>
+                <ul class="profile_orders_item_order-list">
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/adele_30.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">30</p>
+                                <p class="order-list_item_artist_name">ADELE</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/disturbed_immortalized.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">IMMORTALIZED</p>
+                                <p class="order-list_item_artist_name">DISTURBED</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/eminem_kamikaze.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">KAMIKAZE</p>
+                                <p class="order-list_item_artist_name">EMINEM</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item order-list_item_more">
+                        +4
+                    </li>
+                </ul>
+                <div class="orders_item_status-order">
+                    <span>СТАТУС</span>
+                    <p>ПРИНЯТ В РАБОТУ</p>
+                </div>
+            </li>
+            <li class="profile_orders_item">
+                <p class="orders_item_title">
+                    # 128
+                </p>
+                <p class="orders_item_date">
+                    2023-11-10 15:43:00
+                </p>
+                <p class="orders_item_title_order-list">
+                    СОДЕРЖАНИЕ ЗАКАЗА
+                </p>
+                <ul class="profile_orders_item_order-list">
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/adele_30.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">30</p>
+                                <p class="order-list_item_artist_name">ADELE</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/disturbed_immortalized.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">IMMORTALIZED</p>
+                                <p class="order-list_item_artist_name">DISTURBED</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item">
+                        <a class="order-list_item_product_link" href="product.html?id=1">
+                            <img src="./img/vinyl/eminem_kamikaze.png" alt="30">
+                            <div>
+                                <p class="order-list_item_album_name">KAMIKAZE</p>
+                                <p class="order-list_item_artist_name">EMINEM</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="order-list_item order-list_item_more">
+                        +4
+                    </li>
+                </ul>
+                <div class="orders_item_status-order">
+                    <span>СТАТУС</span>
+                    <p>ПРИНЯТ В РАБОТУ</p>
+                </div>
+            </li>
+
         </ul>
     </main>
 
@@ -131,7 +259,7 @@
     </div>
 
     <!-- МЕНЮ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ -->
-    <div class="nav_small_screen no-show">
+    <section class="nav_small_screen no-show">
         <div class="header_small_screen container">
             <div class="small_screen_top">
                 <a href="index.html"><svg width="100" viewBox="0 0 675 312" fill="none"
@@ -157,11 +285,13 @@
             </div>
 
             <div class="small_screen_footer">
-                <a href="login.html">ВОЙТИ</a>
-                <a href="register.html">РЕГИСТРАЦИЯ</a>
+                <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+                <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+                <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+                <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
             </div>
         </div>
-    </div>
+    </section>
     
     <!-- ПОИСКОВОЕ ПОЛЕ -->
     <div class="search_input_header no-show">
@@ -179,7 +309,7 @@
     </div>
 
     <script src="js/jquery-3.7.1.js"></script>
-    <script type="module" src="js/basket_page.js"></script>
+    <script type="module" src="js/profile_page.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/loader.js"></script>
 </body>
