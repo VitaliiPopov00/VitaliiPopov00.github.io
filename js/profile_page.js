@@ -1,5 +1,5 @@
-import { sales, albums, order_statuses } from './query.js';
-import { getOrderCard } from './product_card_function.js';
+import { getOrderCardList } from './product_card_function.js';
+import { sales } from './query.js';
 
 $('main.profile').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
 
@@ -17,6 +17,8 @@ fetch('../database/users.json')
     .then(data => {
         user = data.find(user => user.login == sessionStorage.getItem('login'));
         userID = user.id;
+        
+        $('.profile_orders_list').html(getOrderCardList(sales.filter(sale => sale.user_id == userID)));
     });
 
 

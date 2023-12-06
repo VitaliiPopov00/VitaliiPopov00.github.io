@@ -812,6 +812,7 @@ main.main {
     color: black;
     transition: .2s;
     margin-bottom: 50px;
+    font-size: 13px;
 }
 
 .profile_btn:hover {

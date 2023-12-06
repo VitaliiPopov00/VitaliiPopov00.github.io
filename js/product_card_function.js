@@ -198,10 +198,10 @@ export function getOrderCard(order) {
         let productItem = albums.find(album => album.id == product);
         result += `<li class="order-list_item">
                         <a class="order-list_item_product_link" href="product.html?id=${productItem.id}">
-                            <img src="./img/vinyl/${productItem.logo}" alt="${productItem.title}">
+                            <img src="${productItem.logo}" alt="${productItem.title}">
                             <div>
-                                <p class="order-list_item_album_name">${productItem.title}</p>
-                                <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id)}</p>
+                                <p class="order-list_item_album_name">${productItem.title.toUpperCase()}</p>
+                                <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id).title.toUpperCase()}</p>
                             </div>
                         </a>
                     </li>`;
@@ -211,7 +211,19 @@ export function getOrderCard(order) {
     result += `</ul>
                 <div class="orders_item_status-order">
                     <span>СТАТУС</span>
-                    <p>${order_statuses.find(status => status.id == order.status_id).title}</p>
+                    <p>${order_statuses.find(status => status.id == order.status_id).title.toUpperCase()}</p>
                 </div>
             </li>`;
+
+    return result;
+}
+
+export function getOrderCardList(orders) {
+    let result = '';
+
+    orders.forEach(order => {
+        result += getOrderCard(order);
+    });
+
+    return result;
 }
