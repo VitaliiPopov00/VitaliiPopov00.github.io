@@ -194,19 +194,37 @@ export function getOrderCard(order) {
                         </p>
                         <ul class="profile_orders_item_order-list">`;
 
-    order.order_list.forEach(product => {
+    order.order_list.forEach((product, index) => {
         let productItem = albums.find(album => album.id == product);
-        result += `<li class="order-list_item">
-                        <a class="order-list_item_product_link" href="product.html?id=${productItem.id}">
-                            <img src="${productItem.logo}" alt="${productItem.title}">
-                            <div>
-                                <p class="order-list_item_album_name">${productItem.title.toUpperCase()}</p>
-                                <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id).title.toUpperCase()}</p>
-                            </div>
-                        </a>
-                    </li>`;
+        if (index < 3) {
+
+            result += `<li class="order-list_item">
+                            <a class="order-list_item_product_link" href="product.html?id=${productItem.id}">
+                                <img src="${productItem.logo}" alt="${productItem.title}">
+                                <div>
+                                    <p class="order-list_item_album_name">${productItem.title.toUpperCase()}</p>
+                                    <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id).title.toUpperCase()}</p>
+                                </div>
+                            </a>
+                        </li>`;
+        } else {
+            result += `<li class="order-list_item no-show" data-show=1>
+                            <a class="order-list_item_product_link" href="product.html?id=${productItem.id}">
+                                <img src="${productItem.logo}" alt="${productItem.title}">
+                                <div>
+                                    <p class="order-list_item_album_name">${productItem.title.toUpperCase()}</p>
+                                    <p class="order-list_item_artist_name">${artists.find(artist => artist.id == productItem.artist_id).title.toUpperCase()}</p>
+                                </div>
+                            </a>
+                        </li>`;
+        }
     });
 
+    if (order.order_list.length > 3) {
+        result += `<li class="order-list_item order-list_item_more-link">
+                        <p>+${order.order_list.length - 3} <img src="./img/site/show_more.svg" alt="ПОЛНЫЙ СПИСОК"></p>
+                    </li>`
+    }
                     
     result += `</ul>
                 <div class="orders_item_status-order">

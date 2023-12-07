@@ -17,8 +17,15 @@ fetch('../database/users.json')
     .then(data => {
         user = data.find(user => user.login == sessionStorage.getItem('login'));
         userID = user.id;
-        
-        $('.profile_orders_list').html(getOrderCardList(sales.filter(sale => sale.user_id == userID)));
+        let userOrders = sales.filter(sale => sale.user_id == userID);
+
+        if (userOrders.length) {
+            $('.profile_orders_list').html(getOrderCardList(userOrders));
+        } else {
+            $('.profile_orders_title').html('ВАШ СПИСОК ЗАКАЗОВ ПУСТ :(');
+        }
     });
 
-
+$('.profile_orders_list').on('click', '.order-list_item_more-link', function() {
+    $('.order-list_item[data-show=1]').toggleClass('no-show');
+});

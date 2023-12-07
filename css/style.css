@@ -836,6 +836,7 @@ main.main {
     width: 250px;
     background-color: white;
     padding: 10px 15px;
+    height: fit-content;
 }
 
 .orders_item_title {
@@ -857,8 +858,27 @@ main.main {
     display: flex;
     gap: 10px;
     flex-direction: column;
-    min-height: 200px;
     margin-bottom: 18px;
+}
+
+.order-list_item_more-link img {
+    transition: .2s;
+}
+
+.order-list_item_more-link p {
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all(.3s);
+}
+
+.order-list_item_more-link:hover {
+    cursor: pointer;
+}
+
+.order-list_item_more-link:hover img {
+    transform: rotate(180deg);
 }
 
 .order-list_item_product_link {
@@ -1017,6 +1037,29 @@ main.main {
 }
 
 /* MAIN PRODUCTS END */
+
+
+
+/* MAIN ABOUT START */
+.about_company_command {
+    border-collapse: collapse;
+    margin-left: 15px
+}
+
+.about_company_command td {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.about_company_command tr td:first-child {
+    padding: 15px 15px 5px 0px;
+    color: #ccc;
+}
+
+.about_company_command tr td:nth-child(2) {
+    padding: 15px 0px 5px 15px;;
+}
+/* MAIN ABOUT END */
 
 /* MAIN END */
 
