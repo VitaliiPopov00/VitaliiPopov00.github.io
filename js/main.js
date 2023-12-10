@@ -4,6 +4,7 @@ import { getSearchItemHTML } from './product_card_function.js';
 $(document).ready(function () {
     function setBasicCss() {
         $('.nav_small_screen').css('height', `${$(window).height()}px`);
+        $('main').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
     }
 
     if (sessionStorage.getItem('login')) {
@@ -12,16 +13,12 @@ $(document).ready(function () {
     }
 
     setBasicCss();
-    $('.search_input_header').css('top', $('header').outerHeight(true));
     $(window).on('resize', setBasicCss);
-    
 
+    $('.search_input_header').css('top', $('header').outerHeight(true));
+    
     $('.menu_btn').on('click', () => {
         $('.nav_small_screen').slideToggle(300);
-    });
-
-    $('.basket_button').on('click', function (e) {
-        e.preventDefault();
     });
 
     $('.button_up').on('click', function (e) {

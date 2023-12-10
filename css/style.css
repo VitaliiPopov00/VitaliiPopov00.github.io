@@ -1059,6 +1059,40 @@ main.main {
 .about_company_command tr td:nth-child(2) {
     padding: 15px 0px 5px 15px;;
 }
+
+.about_description_company {
+    color: #727272;
+    font-size: 13px;
+    line-height: 1.25;
+    margin-bottom: 20px
+}
+
+.about_description_company span {
+    color: white;
+    font-size: 16px;
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+details p {
+    margin-top: 5px;
+}
+
+details details {
+    margin-left: 15px;
+}
+
+details details p {
+    line-height: 1.5;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+details details span {
+    color: #727272;
+}
 /* MAIN ABOUT END */
 
 /* MAIN END */

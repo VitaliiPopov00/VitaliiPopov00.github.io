@@ -1,7 +1,6 @@
 import { artists, genres, albums } from './query.js';
 import { getCardListHTML, getGenreListHTML, getUrlVars, getArtistListHTML } from './product_card_function.js';
 
-$('.products_page').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
 $('.products_filter_item_list.artist-list').html(getArtistListHTML(artists));
 $('.products_filter_item_list.genre-list').html(getGenreListHTML(genres));
 

@@ -1,7 +1,5 @@
 import { addErrorInput } from "./product_card_function.js";
 
-$('.register').css('height', `${$(window).height() - $('header').outerHeight(true)}px`);
-
 $('.register_form>input').on('input', function (e) {
     $(this).removeClass('error').next().text('');
 });

@@ -1,8 +1,6 @@
 import { getBasketCard } from './product_card_function.js';
 import { albums } from './query.js';
 
-$('.basket').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-
 function setHTML() {
     let basket = JSON.parse(localStorage.getItem('basketProducts'));
     let products = [];
@@ -67,6 +65,9 @@ $('.basket_product_list').on('click', '.minus', function (e) {
     setHTML();
 });
 
+$('.basket_button').on('click', function (e) {
+    e.preventDefault();
+});
 
 
 

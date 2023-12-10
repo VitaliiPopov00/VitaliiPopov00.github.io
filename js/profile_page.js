@@ -1,8 +1,6 @@
 import { getOrderCardList } from './product_card_function.js';
 import { sales } from './query.js';
 
-$('main.profile').css('min-height', `${$(window).height() - $('header').outerHeight(true)}px`);
-
 if (!sessionStorage.getItem('login')) {
     window.location = '403.html';
 }
