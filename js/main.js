@@ -18,7 +18,14 @@ $(document).ready(function () {
     $('.search_input_header').css('top', $('header').outerHeight(true));
     
     $('.menu_btn').on('click', () => {
-        $('.nav_small_screen').slideToggle(300);
+        if ($('body').hasClass('overflow_hidden')) {
+            $('body').removeClass('overflow_hidden');
+            $('.nav_small_screen').slideToggle(300);
+        } else {
+            $('.nav_small_screen').slideToggle(300, function() {
+                $('body').toggleClass('overflow_hidden');
+            });
+        }
     });
 
     $('.button_up').on('click', function (e) {
