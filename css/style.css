@@ -1239,3 +1239,7 @@ footer {
     height: 100vh;
     overflow: hidden;
 }
+
+.active_page {
+    border-bottom: 2px solid #fff;
+}
