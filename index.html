@@ -1,330 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/normalize.css">
 </head>
+
 <body>
-    <header class="d-flex justify-content-c py-20">
-        <div class="container">
-            <nav class="d-flex justify-content-sb align-items-c">
-                <a href="#" class="header__logo">
-                    <img src="./img/logo.svg" alt="meetanator">
-                </a>
+    <header class="header container opacity">
+        <a href="index.html"><svg width="100" viewBox="0 0 675 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="675" height="312" fill="#1E1E1E" />
+                <rect width="675" height="312" fill="white" />
+                <path
+                    d="M58.9188 191V121H106.819C123.819 121 131.819 129.1 131.819 139.4C131.819 147.2 127.119 152.2 120.419 154.5C127.919 156.7 134.019 162 134.019 171.7C134.019 182.8 126.119 191 109.019 191H58.9188ZM83.1188 176.9H101.119C106.419 176.9 109.519 173.9 109.519 169.1C109.519 164.6 106.419 161.6 101.119 161.6H83.1188V176.9ZM83.1188 148.2H100.019C104.819 148.2 107.619 145.6 107.619 141.3C107.619 137.3 104.819 134.6 100.019 134.6H83.1188V148.2ZM175.852 191V121H200.152V164.9H200.252L225.852 121H252.252V191H227.952V147.1H227.852L202.352 191H175.852ZM296.692 191V121H321.292V146.6H346.192V121H370.892V191H346.192V162.2H321.292V191H296.692ZM415.286 191V121H439.586V164.9H439.686L465.286 121H491.686V191H467.386V147.1H467.286L441.786 191H415.286ZM532.826 171.5C544.326 170.7 547.726 167.3 548.726 146.1L549.726 121H616.126V191H591.526V137.1H569.926L569.526 148.3C568.226 182.5 558.926 191.5 538.026 191.5H536.426L532.826 171.5Z"
+                    fill="black" />
+            </svg></a>
 
-                <ul class="d-flex justify-content-sb gap-50">
-                    <li>
-                        <a href="#about" class="btn">
-                            О нас
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#workService" class="btn">
-                            Как это работает?
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#subscriptions" class="btn">
-                            Платные тарифы
-                        </a>
-                    </li>
-                </ul>
+        <div class="nav nav_big_screen">
+            <a href="products.html">ТОВАРЫ</a>
+            <a href="#" class="header_search">ПОИСК</a>
+            <a href="basket.html">КОРЗИНА</a>
+            <a href="about.html">О НАС</a>
+        </div>
 
-                <ul class="d-flex">
-                    <li>
-                        <a href="#" class="btn-primary-transparent font-weight-big">
-                            Войти
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#meetCreate" class="btn-primary font-weight-big">
-                            Начать
-                        </a>
-                    </li>
-                </ul>
+        <div class="nav nav_big_screen">
+            <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+            <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+            <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+            <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
+        </div>
 
-                <div class="burger-btn d-none">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+        <div class="menu_btn main">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
 
-    <section class="d-flex justify-content-c pt-75 pb-150" id="index">
-        <div class="container d-flex">
-            <div class="d-flex flex-direction-c justify-content-se gap-50">
-                <h1 class="heading-text">
-                    Встречаться - это <span class="span-primary">просто!</span>
+    <main class="main opacity">
+        <section class="main_screen">
+            <img src="./img/site/main.gif" alt="" class="main_img">
+            <div class="main_logo">
+                <svg class="svg_main_logo" viewBox="0 0 675 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="675" height="312" fill="#1E1E1E" />
+                    <rect width="675" height="312" fill="white" />
+                    <path
+                        d="M58.9188 191V121H106.819C123.819 121 131.819 129.1 131.819 139.4C131.819 147.2 127.119 152.2 120.419 154.5C127.919 156.7 134.019 162 134.019 171.7C134.019 182.8 126.119 191 109.019 191H58.9188ZM83.1188 176.9H101.119C106.419 176.9 109.519 173.9 109.519 169.1C109.519 164.6 106.419 161.6 101.119 161.6H83.1188V176.9ZM83.1188 148.2H100.019C104.819 148.2 107.619 145.6 107.619 141.3C107.619 137.3 104.819 134.6 100.019 134.6H83.1188V148.2ZM175.852 191V121H200.152V164.9H200.252L225.852 121H252.252V191H227.952V147.1H227.852L202.352 191H175.852ZM296.692 191V121H321.292V146.6H346.192V121H370.892V191H346.192V162.2H321.292V191H296.692ZM415.286 191V121H439.586V164.9H439.686L465.286 121H491.686V191H467.386V147.1H467.286L441.786 191H415.286ZM532.826 171.5C544.326 170.7 547.726 167.3 548.726 146.1L549.726 121H616.126V191H591.526V137.1H569.926L569.526 148.3C568.226 182.5 558.926 191.5 538.026 191.5H536.426L532.826 171.5Z"
+                        fill="black" />
+                </svg>
+
+                <h1 class="main_title">
+                    ИНТЕРНЕТ-МАГАЗИН<br>ВИНИЛОВЫХ ПЛАСТИНОК
                 </h1>
-                <p class="font-size-middle font-weight-small">
-                    Meetanator -  бесплатный сервис, в котором вы можете максимально легко создать и спланировать встречу
-                </p>
-                <a href="#meetCreate" class="btn-primary align-self-fs font-weight-big">
-                    Создать встречу
-                </a>
             </div>
-            <div class="main__img">
-                <img src="./img/slogan.svg" alt="slogan">
+        </section>
+
+        <section class="products container" data-index-last-sales>
+            <h3 class="products_title">ПОСЛЕДНИЕ ПРОДАЖИ</h3>
+            <!-- CARD LIST -->
+        </section>
+
+        <section class="products container" data-index-beset-seller>
+            <h3 class="products_title">ХИТЫ ПРОДАЖ</h3>
+            <!-- CARD LIST -->
+        </section>
+    </main>
+    <footer class="footer container opacity">
+        <div class="contact">
+            <div class="email_contact">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#808080" width="30">
+                    <path
+                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                </svg>
+
+                vitalik.popov05@gmail.com
+            </div>
+
+            <div class="phone_contact">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="30" fill="#808080">
+                    <path
+                        d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                </svg>
+
+                +7 911 582 74 10
             </div>
         </div>
-    </section>
 
-    <section class="pt-50 pb-75 d-flex justify-content-c" id="about">
-        <div class="container">
-            <h3 class="text-align-c heading-text mb-50">
-                О нас
-            </h3>
+        <div class="information_company">
+            <svg width="250" viewBox="0 0 675 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="675" height="312" fill="#1E1E1E" />
+                <rect width="675" height="312" fill="white" />
+                <path
+                    d="M58.9188 191V121H106.819C123.819 121 131.819 129.1 131.819 139.4C131.819 147.2 127.119 152.2 120.419 154.5C127.919 156.7 134.019 162 134.019 171.7C134.019 182.8 126.119 191 109.019 191H58.9188ZM83.1188 176.9H101.119C106.419 176.9 109.519 173.9 109.519 169.1C109.519 164.6 106.419 161.6 101.119 161.6H83.1188V176.9ZM83.1188 148.2H100.019C104.819 148.2 107.619 145.6 107.619 141.3C107.619 137.3 104.819 134.6 100.019 134.6H83.1188V148.2ZM175.852 191V121H200.152V164.9H200.252L225.852 121H252.252V191H227.952V147.1H227.852L202.352 191H175.852ZM296.692 191V121H321.292V146.6H346.192V121H370.892V191H346.192V162.2H321.292V191H296.692ZM415.286 191V121H439.586V164.9H439.686L465.286 121H491.686V191H467.386V147.1H467.286L441.786 191H415.286ZM532.826 171.5C544.326 170.7 547.726 167.3 548.726 146.1L549.726 121H616.126V191H591.526V137.1H569.926L569.526 148.3C568.226 182.5 558.926 191.5 538.026 191.5H536.426L532.826 171.5Z"
+                    fill="black" />
+            </svg>
 
-            <ul class="d-flex justify-content-c flex-wrap-w gap-60">
-                <li class="pb-10">
-                    <p class="font-weight-big font-size-big text-align-c">
-                        &gt;4 млн
-                        <span class="font-size-normal font-weight-small d-block">пользователей</span>
-                    </p>
-                </li>
-                <li class="pb-10">
-                    <p class="font-weight-big font-size-big text-align-c">
-                        146%
-                        <span class="font-size-normal font-weight-small d-block">удовлетворенных пользователей</span>
-                    </p>
-                </li>
-                <li class="pb-10">
-                    <p class="font-weight-big font-size-big text-align-c">
-                        &gt;4
-                        <span class="font-size-normal font-weight-small d-block">дней на рынке</span>
-                    </p>
-                </li>
-                <li class="pb-10">
-                    <p class="font-weight-big font-size-big text-align-c">
-                        100 млн
-                        <span class="font-size-normal font-weight-small d-block">рублей привлеченных инвестиции</span>
-                    </p>
-                </li>
-            </ul>
+            <p>designed by vpopov</p>
+            <p>javalets™</p>
+
+            <a href="https://vk.com/vpopov23" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48" width="30px" fill="#808080">
+                    <path
+                        d="M45.763,35.202c-1.797-3.234-6.426-7.12-8.337-8.811c-0.523-0.463-0.579-1.264-0.103-1.776 c3.647-3.919,6.564-8.422,7.568-11.143C45.334,12.27,44.417,11,43.125,11l-3.753,0c-1.237,0-1.961,0.444-2.306,1.151 c-3.031,6.211-5.631,8.899-7.451,10.47c-1.019,0.88-2.608,0.151-2.608-1.188c0-2.58,0-5.915,0-8.28 c0-1.147-0.938-2.075-2.095-2.075L18.056,11c-0.863,0-1.356,0.977-0.838,1.662l1.132,1.625c0.426,0.563,0.656,1.248,0.656,1.951 L19,23.556c0,1.273-1.543,1.895-2.459,1.003c-3.099-3.018-5.788-9.181-6.756-12.128C9.505,11.578,8.706,11.002,7.8,11l-3.697-0.009 c-1.387,0-2.401,1.315-2.024,2.639c3.378,11.857,10.309,23.137,22.661,24.36c1.217,0.12,2.267-0.86,2.267-2.073l0-3.846 c0-1.103,0.865-2.051,1.977-2.079c0.039-0.001,0.078-0.001,0.117-0.001c3.267,0,6.926,4.755,8.206,6.979 c0.368,0.64,1.056,1.03,1.8,1.03l4.973,0C45.531,38,46.462,36.461,45.763,35.202z" />
+                </svg></a>
         </div>
-    </section>
 
-    <section class="py-50 d-flex justify-content-c" id="workService">
-        <div class="container d-flex flex-direction-c align-items-c">
-            <h3 class="heading-text mb-50">
-                Как это работает?
-            </h3>
-            <video src="video/about.mp4" loop autoplay muted></video>
-        </div>
-    </section>
-
-    <section class="d-flex justify-content-c py-50" id="subscriptions">
-        <div class="container">
-            <h3 class="heading-text text-align-c mb-10">
-                Используй весь наш <span class="span-primary">функционал</span>
-            </h3>
-            <table>
-                <tr>
-                    <td class="p-20">
-                    </td>
-                    <th class="no__sub p-20">
-                        Без подписки
-                    </th>
-                    <th class="p-20">
-                        Стандартная подписка
-                    </th>
-                    <th class="premium__sub p-20">
-                        Премиум подписка
-                    </th>
-                </tr>
-                <tr>
-                    <th class="p-20">
-                        Стоимость
-                    </th>
-                    <td class="p-20">
-                        0 ₽ / мес
-                    </td>
-                    <td class="p-20">
-                        999 ₽ / мес
-                    </td>
-                    <td class="p-20">
-                        1 999 ₽ / мес
-                    </td>
-                </tr>
-                <tr>
-                    <th class="p-20">
-                        Максимальное кол-во участников
-                    </th>
-                    <td class="p-20">
-                        5
-                    </td>
-                    <td class="p-20">
-                        25
-                    </td>
-                    <td class="p-20">
-                        без ограничений
-                    </td>
-                </tr>
-                <tr>
-                    <th class="p-20">
-                        Количество дней для одной встречи
-                    </th>
-                    <td class="p-20">
-                        1
-                    </td>
-                    <td class="p-20">
-                        5
-                    </td>
-                    <td class="p-20">
-                        без ограничений
-                    </td>
-                </tr>
-                <tr>
-                    <th class="p-20">
-                        Возможность редактировать встречу
-                    </th>
-                    <td class="p-20">
-                        -
-                    </td>
-                    <td class="p-20">
-                        +
-                    </td>
-                    <td class="p-20">
-                        +
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="d-flex justify-content-c">
-                            <a href="#" class="btn-primary w-0.25">
-                                Приобрести
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex justify-content-c">
-                            <a href="#" class="btn-primary">
-                                Приобрести
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="py-75 d-flex justify-content-c" id="meetCreate">
-        <div class="container">
-            <h3 class="heading-text mb-30">
-                Создание встречи
-            </h3>
-            <form action="#" class="d-flex flex-direction-c gap-40">
-                <div>
-                    <input type="text" class="create__meet__input p-10 form-control" name="title" id="title" placeholder="Название встречи" pattern="[а-яА-ЯёЁ]+" title="Используйте в названий только кириллицу">
-                    <p class="invalid__feedback mt-5">
-                    </p>
-                    <p class="valid__feedback mt-5">
-                    </p>
-                </div>
-                <div>
-                    <input type="text" class="create__meet__input p-10 form-control is-valid" name="description" id="description" placeholder="Описание встречи (необязательно)">
-                    <p class="invalid__feedback">
-                    </p>
-                    <p class="valid__feedbak mt-5">
-                        Всё круто!
-                    </p>
-                </div>
-                <div>
-                    <input type="text" class="create__meet__input p-10 form-control is-invalid" name="nickname" id="nickname" pattern="[a-zA-Z.]+" title="Допустимые символы: латиница и точка" required placeholder="Никнейм">
-                    <p class="invalid__feedback mt-5">
-                        Пример ошибки
-                    </p>
-                    <p class="valid__feedback mt-5">
-                    </p>
-                </div>
-                <ul class="create__meet__input__date__list d-flex flex-direction-c gap-40">
-                    <li class="input__date__item d-flex gap-15 flex-wrap-w">
-                        <div class="d-flex flex-direction-c align-items-c">
-                            <label for="date1">День проведения</label>
-                            <input type="date" class="create__meet__input p-10 form-control is-invalid" name="date1" id="date1" value="2023-12-03" min="2023-12-03" max="2024-01-03" required>
-                            <p class="invalid__feedback mt-5 align-self-fs">
-                                Пример ошибки
-                            </p>
-                            <p class="valid__feedback mt-5 align-self-fs">
-                            </p>
-                        </div>
-                        <div class="d-flex flex-direction-c align-items-c">
-                            <label for="timeStart1">Начало</label>
-                            <input type="time" class="create__meet__input p-10 form-control is-valid" name="timeStart1" id="timeStart1" value="09:00" required>
-                            <p class="invalid__feedback mt-5 align-self-fs">
-                            </p>
-                            <p class="valid__feedbak mt-5 align-self-fs">
-                                Всё круто!
-                            </p>
-                        </div>
-                        <div class="d-flex flex-direction-c align-items-c">
-                            <label for="timeEnd1">Конец</label>
-                            <input type="time" class="create__meet__input p-10 form-control" name="timeEnd1" id="timeEnd1" value="20:00" required>
-                            <p class="invalid__feedback mt-5 align-self-fs">
-                            </p>
-                            <p class="valid__feedbak mt-5 align-self-fs">
-                            </p>
-                        </div>
-                        <div class="input__date__item__operations d-flex align-items-c gap-25">
-                            <a href="#" data-delete-date>
-                                <img src="./img/close.svg" alt="delete">
-                            </a>
-                            <a href="#" data-add-date>
-                                <img src="./img/add.svg" alt="add">
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="create__meet__agree d-flex gap-15">
-                    <input type="checkbox" name="agree" id="agree">
-                    <label for="agree">даю согласие на обработку моих персональных данных</label>
-                </div>
-                <input type="submit" class="create__meet__submit btn-primary align-self-fs" value="Перейти в комнату">
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer pt-50 pb-25 d-flex justify-content-c">
-        <div class="container pt-30 pr-40 pb-20 pl-40">
-            <div class="footer__title__company mb-35">
-                <h3 class="font-size-middle font-weight-big mb-10">
-                    Meetanator
-                </h3>
-                <p class="font-weight-small">
-                    Мы становимся лучше с каждым днем.
-                    <br>
-                    Встречаться - это просто!
-                </p>
-            </div>
-            <ul class="footer__links d-flex justify-content-se mb-10">
-                <li class="footer__links__link">
-                    <a href="#about" class="pb-15 d-block text-align-c">
-                        О нас
-                    </a>
-                </li>
-                <li class="footer__links__link">
-                    <a href="#workService" class="pb-15 d-block text-align-c">
-                        Как это работает?
-                    </a>
-                </li>
-                <li class="footer__links__link">
-                    <a href="#subscriptions" class="pb-15 d-block text-align-c">
-                        Платные тарифы
-                    </a>
-                </li>
-            </ul>
-            <p class="footer__copyright text-align-c">
-                © 2023 Copyright: Meetanator
-            </p>
-        </div>
+        <a href="#" class="button_up">НАВЕРХ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                width="15">
+                <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
+            </svg></a>
     </footer>
 
-    <script src="./js/indexPage.js"></script>
+    <!-- ЛОАДЕР -->
+    <section class="loader">
+        <svg width="60" viewBox="0 0 97 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M44.8611 1.01147C44.5007 1.04941 43.3815 1.1822 42.395 1.29602C27.3897 3.00333 13.5225 12.4125 5.89649 26.052C3.12685 31.0222 1.11602 37.1875 0.262362 43.3907C-0.117041 46.1035 -0.0791004 53.388 0.338243 56.1007C2.04555 67.2172 6.61736 76.3039 14.3382 83.9299C15.5333 85.1061 17.2786 86.6806 18.2081 87.4394C30.368 97.1521 46.5495 100.415 61.6497 96.1846C79.273 91.2524 92.8746 76.3988 96.1564 58.491C99.1157 42.4612 94.2025 26.5832 82.7824 15.1442C75.2134 7.59411 66.1077 3.0223 55.2947 1.3719C53.3977 1.08735 46.3408 0.840736 44.8611 1.01147ZM33.9913 17.4017C35.0915 18.4071 34.6932 19.3935 32.8341 20.3989C26.5929 23.7756 21.7935 28.8027 18.7013 35.2336C16.7664 39.2552 15.761 43.3149 15.5143 47.9436C15.4005 50.0493 15.3436 50.3528 14.9642 50.7322C14.3761 51.3203 13.4845 51.3013 12.8965 50.6942C12.4791 50.2959 12.4222 50.0682 12.4222 48.8921C12.4222 44.4151 13.7881 38.5534 15.8368 34.1333C18.4927 28.4612 23.1024 23.0927 28.3571 19.5453C30.1214 18.3502 32.6254 17.0223 33.0997 17.0223C33.3842 17.0223 33.7826 17.193 33.9913 17.4017ZM29.8558 30.4152C30.4818 31.2119 30.368 31.8 29.2867 33.052C26.6878 36.1252 24.8856 39.7105 23.8991 43.8271C23.349 46.0845 23.0645 46.4639 22.0401 46.388C21.471 46.3501 21.1864 46.1983 20.8829 45.7999C20.5035 45.2878 20.5035 45.2688 20.826 43.6184C21.7555 39.1414 24.3734 33.8867 27.162 30.9084C27.9588 30.0737 28.2054 29.9219 28.7745 29.9219C29.3056 29.9219 29.5712 30.0547 29.8558 30.4152ZM51.5576 31.5344C58.6145 32.7675 64.1917 37.9273 66.1456 45.0791C66.7337 47.1658 66.7337 51.7566 66.1456 53.8433C64.2866 60.6156 59.2785 65.5479 52.5251 67.2362C50.5332 67.7294 46.1891 67.6915 44.1593 67.1603C39.5875 65.9462 35.6606 63.1576 33.2135 59.3826C29.4005 53.4829 29.3056 45.8948 32.9479 39.9761C36.8558 33.6211 44.2731 30.2634 51.5576 31.5344ZM84.0345 48.2281C84.4518 48.6265 84.5087 48.8541 84.5087 50.0303C84.5087 53.2742 83.693 57.7891 82.4789 61.2985C79.6334 69.5316 73.8855 76.3988 66.0698 80.9137C64.5901 81.7673 64.1917 81.9001 63.6416 81.8242C62.9397 81.7104 62.5603 81.35 62.3706 80.6101C62.1809 79.8703 62.6172 79.2822 63.7933 78.6942C65.5576 77.8026 68.7066 75.621 70.4708 74.0654C75.4789 69.6644 79.2161 63.2714 80.6957 56.575C81.132 54.5641 81.4735 51.6807 81.4735 49.9354C81.4735 48.8541 81.5304 48.6265 81.9478 48.2281C82.2323 47.9246 82.6307 47.7539 82.9911 47.7539C83.3515 47.7539 83.7499 47.9246 84.0345 48.2281ZM76.2377 53.1224C76.6172 53.6346 76.6172 53.6536 76.2947 55.304C75.3651 59.7809 72.7472 65.0357 69.9586 68.014C69.1619 68.8487 68.9153 69.0004 68.3462 69.0004C67.815 69.0004 67.5494 68.8676 67.2649 68.5072C66.6578 67.7294 66.7527 67.1224 67.7391 65.9652C70.4898 62.6644 72.2351 59.2118 73.2215 55.0953C73.7716 52.8379 74.0562 52.4585 75.0806 52.5343C75.6497 52.5723 75.9342 52.724 76.2377 53.1224Z"
+                fill="white" />
+            <path
+                d="M46.6819 44.4531C45.354 44.8704 43.8554 46.407 43.457 47.7539C42.831 49.8785 43.2483 51.6617 44.728 53.1414C47.9339 56.3284 53.2645 54.4313 53.7198 49.9354C54.0423 46.8812 51.4624 44.1116 48.3892 44.1685C47.9529 44.1685 47.1941 44.3013 46.6819 44.4531ZM50.0586 47.9246C50.5518 48.4368 50.6467 48.6644 50.6467 49.4612C50.6467 50.2769 50.5518 50.4856 50.0206 51.0167C49.4895 51.5479 49.2808 51.6427 48.4651 51.6427C47.6494 51.6427 47.4407 51.5479 46.9095 51.0167C46.3784 50.4856 46.2835 50.2769 46.2835 49.4801C46.2835 48.4937 46.7578 47.7349 47.6114 47.3555C48.3133 47.052 49.4326 47.2986 50.0586 47.9246Z"
+                fill="white" />
+        </svg>
+    </section>
+
+    <!-- МЕНЮ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ -->
+    <section class="nav_small_screen no-show">
+        <div class="header_small_screen container">
+            <div class="small_screen_top">
+                <a href="index.html"><svg width="100" viewBox="0 0 675 312" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="675" height="312" fill="#1E1E1E" />
+                        <rect width="675" height="312" fill="black" />
+                        <path
+                            d="M58.9188 191V121H106.819C123.819 121 131.819 129.1 131.819 139.4C131.819 147.2 127.119 152.2 120.419 154.5C127.919 156.7 134.019 162 134.019 171.7C134.019 182.8 126.119 191 109.019 191H58.9188ZM83.1188 176.9H101.119C106.419 176.9 109.519 173.9 109.519 169.1C109.519 164.6 106.419 161.6 101.119 161.6H83.1188V176.9ZM83.1188 148.2H100.019C104.819 148.2 107.619 145.6 107.619 141.3C107.619 137.3 104.819 134.6 100.019 134.6H83.1188V148.2ZM175.852 191V121H200.152V164.9H200.252L225.852 121H252.252V191H227.952V147.1H227.852L202.352 191H175.852ZM296.692 191V121H321.292V146.6H346.192V121H370.892V191H346.192V162.2H321.292V191H296.692ZM415.286 191V121H439.586V164.9H439.686L465.286 121H491.686V191H467.386V147.1H467.286L441.786 191H415.286ZM532.826 171.5C544.326 170.7 547.726 167.3 548.726 146.1L549.726 121H616.126V191H591.526V137.1H569.926L569.526 148.3C568.226 182.5 558.926 191.5 538.026 191.5H536.426L532.826 171.5Z"
+                            fill="white" />
+                    </svg></a>
+
+                <div class="menu_btn second">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="small_screen_middle">
+                <a href="products.html">ТОВАРЫ</a>
+                <a href="#" class="header_search header_search_mobile">ПОИСК</a>
+                <a href="basket.html">КОРЗИНА</a>
+                <a href="about.html">О НАС</a>
+            </div>
+
+            <div class="small_screen_footer">
+                <a href="login.html" class="no_auth_user">ВОЙТИ</a>
+                <a href="register.html" class="no_auth_user">РЕГИСТРАЦИЯ</a>
+                <a href="profile.html" class="auth_user no-show">ЛИЧНЫЙ КАБИНЕТ</a>
+                <a href="logout.html" class="logout_login auth_user no-show">ВЫХОД</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОИСКОВОЕ ПОЛЕ -->
+    <section class="search_input_header no-show">
+        <form action="products.html" class="form_search_header" method="get">
+            <input type="text" name="title" class="header_input_search" placeholder="ПОИСК ПО НАЗВАНИЮ" data-title="">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="40" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+            </button>
+        </form>
+        <ul class="search_list_result">
+
+        </ul>
+    </section>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script type="module" src="js/index_page.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/loader.js"></script>
 </body>
+
 </html>
