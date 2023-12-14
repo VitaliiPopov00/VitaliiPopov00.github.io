@@ -1,0 +1,28 @@
+.footer {
+    .container {
+        background-color: var(--primaryColor);
+        color: var(--thirdColor);
+        border-radius: 30px;
+
+        .footer__title__company {
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .footer__links {
+            border-bottom: 1px solid var(--thirdColor);
+
+            .footer__links__link {
+                a {
+                    color: var(--thirdColor);
+                }
+            }
+        }
+
+        .footer__copyright {
+            font-weight: 800;
+            font-size: 12px;
+        }
+    }
+}
