@@ -12,6 +12,9 @@ $(document).ready(function () {
         $('a.auth_user').removeClass('no-show');
     }
 
+    let currentPage = location.pathname.match(/[^/]*$/)[0];
+    $(`.nav_big_screen a[href="${currentPage}"]`).addClass('active_page');
+
     setBasicCss();
     $(window).on('resize', setBasicCss);
 
