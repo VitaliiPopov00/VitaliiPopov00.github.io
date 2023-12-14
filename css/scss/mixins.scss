@@ -1,0 +1,11 @@
+@mixin centerChildren {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin standartFlexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
