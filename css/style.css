@@ -1001,7 +1001,6 @@ main.main {
 }
 
 .filter_price {
-    display: flex;
     flex-direction: column;
 }
 
