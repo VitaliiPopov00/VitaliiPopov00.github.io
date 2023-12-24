@@ -1,10 +1,11 @@
 import { sales } from './query.js';
 
-let lastSales = sales.sort((sale1, sale2) => {
+let lastSales = [];
+export let lastSalesProduct = [];
+
+lastSales = sales.sort((sale1, sale2) => {
     return (new Date(sale1.date)).getTime() < (new Date(sale2.date)).getTime()
 });
-
-export let lastSalesProduct = [];
 
 lastSales.some(sale => {
     if (lastSalesProduct.length < 4) {
@@ -19,3 +20,5 @@ lastSales.some(sale => {
         return false;
     }
 });
+
+

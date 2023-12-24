@@ -52,8 +52,8 @@ if (!localStorage.getItem('basketProducts')) {
     localStorage.setItem('basketProducts', '[]');
 }
 
-export let albums = JSON.parse(localStorage.getItem('albums_json'));
-export let artists = JSON.parse(localStorage.getItem('artists_json'));
-export let genres = JSON.parse(localStorage.getItem('genres_json'));
-export let order_statuses = JSON.parse(localStorage.getItem('order_statuses_json'));
-export let sales = JSON.parse(localStorage.getItem('sales_json'));
+export let albums = (JSON.parse(localStorage.getItem('albums_json'))) ? JSON.parse(localStorage.getItem('albums_json')) : [];
+export let artists = (JSON.parse(localStorage.getItem('artists_json'))) ? JSON.parse(localStorage.getItem('artists_json')) : [];
+export let genres = (JSON.parse(localStorage.getItem('genres_json'))) ? JSON.parse(localStorage.getItem('genres_json')) : [];
+export let order_statuses = (JSON.parse(localStorage.getItem('order_statuses_json'))) ? JSON.parse(localStorage.getItem('order_statuses_json')) : [];
+export let sales = (JSON.parse(localStorage.getItem('sales_json'))) ? JSON.parse(localStorage.getItem('sales_json')) : [];
